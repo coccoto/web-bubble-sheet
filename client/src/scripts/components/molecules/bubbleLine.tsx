@@ -37,7 +37,7 @@ export default (props: Props): JSX.Element  => {
             <div>
                 <InputCheckbox
                     index={0}
-                    label={'OK'}
+                    label={'Correct'}
                 ></InputCheckbox>
             </div>
         </div>
