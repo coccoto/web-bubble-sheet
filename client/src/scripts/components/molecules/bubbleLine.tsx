@@ -1,9 +1,12 @@
 // react
-import React from 'react'
+import React, { useContext } from 'react'
 // atoms
 import InputCheckbox from '@/scripts/components/atoms/inputCheckbox'
 // hooks
 import useElementDuplication from '@/scripts/hooks/useElementDuplication'
+
+// contexts
+import BubbleContext from '@/scripts/contexts/bubbleContext'
 
 type Props = {
     checkboxNum: number
