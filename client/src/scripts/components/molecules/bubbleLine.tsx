@@ -1,12 +1,9 @@
 // react
-import React, { useContext } from 'react'
+import React from 'react'
 // atoms
 import InputCheckbox from '@/scripts/components/atoms/inputCheckbox'
 // hooks
 import useElementDuplication from '@/scripts/hooks/useElementDuplication'
-
-// contexts
-import BubbleContext from '@/scripts/contexts/bubbleContext'
 
 type Props = {
     checkboxNum: number
@@ -27,7 +24,7 @@ export default (props: Props): JSX.Element  => {
                     elementDuplication.duplicate(
                         <InputCheckbox
                             index={0}
-                            label={''}
+                            label={'isAlphabet'}
                         ></InputCheckbox>
                         , props.checkboxNum
                         , true

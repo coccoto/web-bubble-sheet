@@ -62,15 +62,14 @@ const RULES = [
         use: [
             'style-loader', 'css-loader', {
                 loader: 'postcss-loader',
-                options: {plugins: [require('autoprefixer')]}
-            }, 'sass-loader', {
-                loader: 'sass-resources-loader',
                 options: {
-                    resources: [
-                        path.resolve(SOURCE, 'styles', 'resources', '*.sass')
-                    ]
-                }
-            }
+                    postcssOptions: {
+                        plugins: [
+                            require('autoprefixer')
+                        ]
+                    }
+                },
+            }, 'sass-loader'
         ]
     },{
         test: /\.(module)\.(sass)$/,
@@ -81,16 +80,13 @@ const RULES = [
             },{
                 loader: 'postcss-loader',
                 options: {
-                    plugins: [require('autoprefixer')]
-                }
-            }, 'sass-loader', {
-                loader: 'sass-resources-loader',
-                options: {
-                    resources: [
-                        path.resolve(SOURCE, 'styles', 'resources', '*.sass')
-                    ]
-                }
-            }
+                    postcssOptions: {
+                        plugins: [
+                            require('autoprefixer')
+                        ]
+                    }
+                },
+            }, 'sass-loader'
         ]
     },{
         test: /\.(html)$/,

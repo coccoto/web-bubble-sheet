@@ -2,7 +2,8 @@
 import React from 'react'
 
 type Props = {
-    handleSubmit: () => void
+    handleSubmit: () => void,
+    label: string
 }
 
 export default (props: Props): JSX.Element  => {
@@ -13,7 +14,7 @@ export default (props: Props): JSX.Element  => {
                 (): void => {
                     props.handleSubmit()
                 }
-            }>button</div>
+            }>{props.label}</div>
         </div>
     )
 }

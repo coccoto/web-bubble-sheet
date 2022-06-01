@@ -2,7 +2,8 @@
 import React from 'react'
 
 type Props = {
-    label: string
+    label: string,
+    defaultValue: string
 }
 
 export default React.forwardRef((props: Props, ref: React.ForwardedRef<HTMLInputElement>): JSX.Element  => {
@@ -15,6 +16,7 @@ export default React.forwardRef((props: Props, ref: React.ForwardedRef<HTMLInput
             <input
                 type='text'
                 ref={ref}
+                defaultValue={props.defaultValue}
             ></input>
         </div>
     )

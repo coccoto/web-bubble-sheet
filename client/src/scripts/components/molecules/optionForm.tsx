@@ -27,17 +27,24 @@ export default (): JSX.Element  => {
 
     return (
         <div>
-            <InputText
-                ref={refInputText[0]}
-                label={'questions'}
-            ></InputText>
-            <InputText
-                ref={refInputText[1]}
-                label={'choices'}
-            ></InputText>
-            <Button
-                handleSubmit={handleSubmit}
-            ></Button>
+            <div>
+                <InputText
+                    ref={refInputText[0]}
+                    label={'questions'}
+                    defaultValue={String(bubbleContext.bubble.lineNum)}
+                ></InputText>
+                <InputText
+                    ref={refInputText[1]}
+                    label={'choices'}
+                    defaultValue={String(bubbleContext.bubble.checkboxNum)}
+                ></InputText>
+            </div>
+            <div>
+                <Button
+                    handleSubmit={handleSubmit}
+                    label={'create'}
+                ></Button>
+            </div>
         </div>
     )
 }

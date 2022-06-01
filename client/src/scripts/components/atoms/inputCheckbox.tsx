@@ -15,7 +15,7 @@ export default (props: Props): JSX.Element  => {
             <input type='checkbox'></input>
             <label>
                 {
-                    props.label === '' ? numberToAlphabet(props.index) : props.label
+                    props.label === 'isAlphabet' ? numberToAlphabet(props.index) : props.label
                 }
             </label>
         </div>
