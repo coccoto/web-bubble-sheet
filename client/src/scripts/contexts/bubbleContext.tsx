@@ -12,6 +12,10 @@ type BubbleContextType = {
     }>>
 }
 
+type Props = {
+    children: React.ReactNode;
+}
+
 const BubbleContext = React.createContext<BubbleContextType>({
     bubble: {
         lineNum: 5,
@@ -20,14 +24,14 @@ const BubbleContext = React.createContext<BubbleContextType>({
     setBubble: () => {}
 })
 
-const BubbleContextProvider = ({children}: any): JSX.Element => {
+const BubbleContextProvider = (props: Props): JSX.Element => {
     const context: BubbleContextType = React.useContext(BubbleContext)
     const [bubble, setBubble] = React.useState(context.bubble)
     const shareContext = {bubble, setBubble}
 
     return (
         <BubbleContext.Provider value={shareContext}>
-            {children}
+            {props.children}
         </BubbleContext.Provider>
     )
 }

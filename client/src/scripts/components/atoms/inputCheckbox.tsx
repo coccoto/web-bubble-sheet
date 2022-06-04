@@ -2,6 +2,10 @@
 import React from 'react'
 // utils
 import numberToAlphabet from '@/scripts/utils/numberToAlphabet'
+// material
+import Box from '@mui/material/Box'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import Checkbox from '@mui/material/Checkbox'
 
 type Props = {
     index: number,
@@ -10,14 +14,13 @@ type Props = {
 
 export default (props: Props): JSX.Element  => {
 
+    const getLabel = (): React.ReactNode => {
+        return props.label === 'isAlphabet' ? numberToAlphabet(props.index) : props.label
+    }
+
     return (
-        <div>
-            <input type='checkbox'></input>
-            <label>
-                {
-                    props.label === 'isAlphabet' ? numberToAlphabet(props.index) : props.label
-                }
-            </label>
-        </div>
+        <Box>
+            <FormControlLabel control={<Checkbox></Checkbox>} label={getLabel()}></FormControlLabel>
+        </Box>
     )
 }

@@ -1,20 +1,25 @@
 // react
 import React from 'react'
+// material
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
 
 type Props = {
+    children: string,
     handleSubmit: () => void,
-    label: string
 }
 
 export default (props: Props): JSX.Element  => {
 
     return (
-        <div>
-            <div onClick={
+        <Box>
+            <Button onClick={
                 (): void => {
                     props.handleSubmit()
                 }
-            }>{props.label}</div>
-        </div>
+            }
+            variant="contained"
+            >{props.children}</Button>
+        </Box>
     )
 }

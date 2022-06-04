@@ -5,7 +5,7 @@ import Main from '@/scripts/components/organisms/main'
 import Header from '@/scripts/components/templates/header'
 import Footer from '@/scripts/components/templates/footer'
 // styles
-import '@/styles/default.sass'
+import '@/styles/index.module.sass'
 
 export default () => {
 

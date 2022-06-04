@@ -1,5 +1,8 @@
 // react
 import React from 'react'
+// material
+import Box from '@mui/material/Box'
+import TextField from '@mui/material/TextField';
 
 type Props = {
     label: string,
@@ -9,15 +12,13 @@ type Props = {
 export default React.forwardRef((props: Props, ref: React.ForwardedRef<HTMLInputElement>): JSX.Element  => {
 
     return (
-        <div>
-            <label>
-                {props.label}
-            </label>
-            <input
-                type='text'
-                ref={ref}
+        <Box>
+            <TextField
+                type={'number'}
+                inputRef={ref}
                 defaultValue={props.defaultValue}
-            ></input>
-        </div>
+                label={props.label}
+            ></TextField>
+        </Box>
     )
 })

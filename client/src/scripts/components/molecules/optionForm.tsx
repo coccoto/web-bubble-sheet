@@ -1,10 +1,12 @@
 // react
 import React from 'react'
 // atoms
-import InputText from '@/scripts/components/atoms/inputText'
+import InputNumber from '@/scripts/components/atoms/inputNumber'
 import Button from '@/scripts/components/atoms/button'
 // contexts
 import BubbleContext from '@/scripts/contexts/bubbleContext'
+// material
+import Box from '@mui/material/Box'
 
 export default (): JSX.Element  => {
 
@@ -26,25 +28,24 @@ export default (): JSX.Element  => {
     }
 
     return (
-        <div>
-            <div>
-                <InputText
+        <Box>
+            <Box sx={{ display: 'flex' }}>
+                <InputNumber
                     ref={refInputText[0]}
-                    label={'questions'}
+                    label={'QUESTIONS'}
                     defaultValue={String(bubbleContext.bubble.lineNum)}
-                ></InputText>
-                <InputText
+                ></InputNumber>
+                <InputNumber
                     ref={refInputText[1]}
-                    label={'choices'}
+                    label={'CHOICES'}
                     defaultValue={String(bubbleContext.bubble.checkboxNum)}
-                ></InputText>
-            </div>
-            <div>
+                ></InputNumber>
+            </Box>
+            <Box>
                 <Button
                     handleSubmit={handleSubmit}
-                    label={'create'}
-                ></Button>
-            </div>
-        </div>
+                >CREATE</Button>
+            </Box>
+        </Box>
     )
 }
