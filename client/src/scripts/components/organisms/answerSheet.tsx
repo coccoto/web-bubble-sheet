@@ -1,7 +1,7 @@
 // react
 import React from 'react'
-// molecules
-import AnswerLine from '@/scripts/components/molecules/answerLine'
+// organisms
+import AnswerLine from '@/scripts/components/organisms/answerLine'
 // contexts
 import Context from '@/scripts/contexts/context'
 // hooks
