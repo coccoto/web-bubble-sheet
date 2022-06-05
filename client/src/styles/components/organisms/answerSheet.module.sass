@@ -1,5 +1,8 @@
+@use 'utils/colors'
 @use 'utils/mixins'
 
-.container
-    @include mixins.grid(center)
-    gap: 1rem
+.container 
+    padding: 0 1rem
+
+    & > div:nth-child(n + 2)
+        margin-top: 2rem

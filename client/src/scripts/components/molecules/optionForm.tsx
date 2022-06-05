@@ -29,22 +29,24 @@ export default (): JSX.Element  => {
 
     return (
         <div className={styles['container']}>
-            <div className={styles['input']}>
-                <InputNumber
-                    ref={refInputText[0]}
-                    label={'QUESTIONS'}
-                    defaultValue={String(context.bubble.lineNum)}
-                ></InputNumber>
-                <InputNumber
-                    ref={refInputText[1]}
-                    label={'CHOICES'}
-                    defaultValue={String(context.bubble.checkboxNum)}
-                ></InputNumber>
-            </div>
-            <div>
-                <Button handleSubmit={handleSubmit}>
-                    CREATE
-                </Button>
+            <div className={styles['wrapper']}>
+                <div className={styles['input']}>
+                    <InputNumber
+                        ref={refInputText[0]}
+                        label={'QUESTIONS'}
+                        defaultValue={String(context.bubble.lineNum)}
+                    ></InputNumber>
+                    <InputNumber
+                        ref={refInputText[1]}
+                        label={'CHOICES'}
+                        defaultValue={String(context.bubble.checkboxNum)}
+                    ></InputNumber>
+                </div>
+                <div>
+                    <Button handleSubmit={handleSubmit}>
+                        CREATE
+                    </Button>
+                </div>
             </div>
         </div>
     )

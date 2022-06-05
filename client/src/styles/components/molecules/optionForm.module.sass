@@ -1,8 +1,20 @@
+@use 'utils/colors'
 @use 'utils/mixins'
 
 .container
-    @include mixins.grid(flex-start)
+    height: 13em
+    border-bottom: 1px solid colors.$border-color
+    box-shadow: 0rem 0.25rem 0.25rem colors.$box-shadow-color
+
+    @include mixins.media()
+        height: 15rem
+
+.wrapper
+    @include mixins.grid(center)
+    align-content: center
+    height: 100%
     gap: 1rem
+    padding: 0 1rem
 
 .input
     @include mixins.flex(flex-start)

@@ -3,7 +3,7 @@ import React from 'react'
 // atoms
 import InputCheckbox from '@/scripts/components/atoms/inputCheckbox'
 // styles
-import styles from '@/styles/components/molecules/indexPart.module.sass'
+import styles from '@/styles/components/molecules/lineNum.module.sass'
 
 type Props = {
     index: number

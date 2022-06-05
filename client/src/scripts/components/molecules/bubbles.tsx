@@ -5,7 +5,7 @@ import InputCheckbox from '@/scripts/components/atoms/inputCheckbox'
 // hooks
 import useElementDuplication from '@/scripts/hooks/useElementDuplication'
 // styles
-import styles from '@/styles/components/molecules/bubblePart.module.sass'
+import styles from '@/styles/components/molecules/bubbles.module.sass'
 
 type Props = {
     checkboxNum: number,

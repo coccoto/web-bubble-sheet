@@ -12,9 +12,7 @@ export default () => {
     return (
         <div>
             <Header></Header>
-            <div className={styles['main-wrapper']}>
-                <Main></Main>
-            </div>
+            <Main></Main>
             <Footer></Footer>
         </div>
     )

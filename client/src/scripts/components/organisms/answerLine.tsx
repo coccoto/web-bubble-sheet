@@ -1,8 +1,8 @@
 // react
 import React from 'react'
 // molecules
-import IndexPart from '@/scripts/components/molecules/indexPart'
-import BubblePart from '@/scripts/components/molecules/bubblePart'
+import LineNum from '@/scripts/components/molecules/lineNum'
+import Bubbles from '@/scripts/components/molecules/bubbles'
 // material
 import {
     TextField,
@@ -19,16 +19,17 @@ export default (props: Props): JSX.Element  => {
 
     return (
         <div>
-            <IndexPart
+            <LineNum
                 index={props.index}
-            ></IndexPart>
-            <BubblePart
+            ></LineNum>
+            <Bubbles
                 checkboxNum={props.checkboxNum}
-            ></BubblePart>
+            ></Bubbles>
             <TextField
                 size={'small'}
                 type={'text'}
                 label={'MEMO'}
+                fullWidth
             ></TextField>
         </div>
     )

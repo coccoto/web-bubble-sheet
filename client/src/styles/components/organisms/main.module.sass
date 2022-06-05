@@ -1,5 +1,10 @@
+@use 'utils/colors'
 @use 'utils/mixins'
 
 .container
-    @include mixins.grid(flex-start)
-    gap: 2rem
+
+    & > div:nth-child(n + 2)
+        margin-top: 2rem
+
+    & > div:last-child
+        margin-bottom: 4rem

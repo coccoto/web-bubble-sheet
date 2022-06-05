@@ -3,7 +3,9 @@ import React from 'react'
 // material
 import {
     TextField
-} from '@mui/material';
+} from '@mui/material'
+// styles
+import styles from '@/styles/components/atoms/inputNumber.module.sass'
 
 type Props = {
     label: string,
