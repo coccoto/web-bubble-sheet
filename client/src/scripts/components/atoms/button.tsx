@@ -20,6 +20,7 @@ export default (props: Props): JSX.Element  => {
                 }
             }
             variant='contained'
+            disableElevation
             >{props.children}</Button>
         </div>
     )

@@ -16,6 +16,7 @@ export default React.forwardRef((props: Props, ref: React.ForwardedRef<HTMLInput
         <div>
             <TextField
                 type={'number'}
+                size={'small'}
                 inputRef={ref}
                 defaultValue={props.defaultValue}
                 label={props.label}

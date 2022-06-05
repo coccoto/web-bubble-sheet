@@ -6,6 +6,8 @@ import AnswerLine from '@/scripts/components/molecules/answerLine'
 import Context from '@/scripts/contexts/context'
 // hooks
 import useElementDuplication from '@/scripts/hooks/useElementDuplication'
+// styles
+import styles from '@/styles/components/organisms/answerSheet.module.sass'
 
 export default (): JSX.Element => {
 
@@ -14,7 +16,7 @@ export default (): JSX.Element => {
     const elementDuplication = useElementDuplication()
 
     return (
-        <div>
+        <div className={styles['container']}>
             {
                 elementDuplication.duplicate(
                     <AnswerLine

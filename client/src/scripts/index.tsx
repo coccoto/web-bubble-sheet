@@ -5,14 +5,14 @@ import Main from '@/scripts/components/organisms/main'
 import Header from '@/scripts/components/templates/header'
 import Footer from '@/scripts/components/templates/footer'
 // styles
-import '@/styles/index.module.sass'
+import styles from '@/styles/index.module.sass'
 
 export default () => {
 
     return (
         <div>
             <Header></Header>
-            <div>
+            <div className={styles['main-wrapper']}>
                 <Main></Main>
             </div>
             <Footer></Footer>

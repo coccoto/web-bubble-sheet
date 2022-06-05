@@ -8,6 +8,8 @@ import useElementDuplication from '@/scripts/hooks/useElementDuplication'
 import {
     Typography,
 } from '@mui/material'
+// styles
+import styles from '@/styles/components/molecules/bubblePart.module.sass'
 
 type Props = {
     checkboxNum: number,
@@ -19,13 +21,11 @@ export default (props: Props): JSX.Element  => {
     const elementDuplication = useElementDuplication()
 
     return (
-        <div>
-            <div>
-                <Typography variant={'body1'}>
-                    {props.index + 1}
-                </Typography>
-            </div>
-            <div>
+        <div className={styles['container']}>
+            <Typography variant={'body1'}>
+                NO {props.index + 1}
+            </Typography>
+            <div className={styles['input']}>
                 {
                     elementDuplication.duplicate(
                         <InputCheckbox

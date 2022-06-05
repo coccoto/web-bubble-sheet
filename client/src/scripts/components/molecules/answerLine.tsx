@@ -3,6 +3,8 @@ import React from 'react'
 // molecules
 import BubblePart from '@/scripts/components/molecules/bubblePart'
 import MemoPart from '@/scripts/components/molecules/memoPart'
+// styles
+import styles from '@/styles/components/molecules/answerLine.module.sass'
 
 type Props = {
     checkboxNum: number,

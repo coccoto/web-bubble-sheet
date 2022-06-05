@@ -6,13 +6,16 @@ import InputCheckbox from '@/scripts/components/atoms/inputCheckbox'
 import {
     TextField,
 } from '@mui/material'
+// styles
+import styles from '@/styles/components/molecules/memoPart.module.sass'
 
 export default (): JSX.Element  => {
 
     return (
-        <div>
+        <div className={styles['container']}>
             <div>
                 <TextField
+                    size={'small'}
                     type={'text'}
                     label={'MEMO'}
                 ></TextField>

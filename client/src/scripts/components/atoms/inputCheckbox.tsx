@@ -22,7 +22,7 @@ export default (props: Props): JSX.Element  => {
     return (
         <div>
             <FormControlLabel
-                control={<Checkbox></Checkbox>}
+                control={<Checkbox size={'small'}></Checkbox>}
             label={getLabel()}></FormControlLabel>
         </div>
     )

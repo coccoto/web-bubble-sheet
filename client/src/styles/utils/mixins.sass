@@ -1,0 +1,13 @@
+@mixin media($width: 960px)
+    @media screen and (min-width: $width)
+        @content
+
+@mixin flex($column)
+    display: flex
+    justify-content: $column
+    align-items: center
+
+@mixin grid($column)
+    display: grid
+    justify-content: $column
+    align-items: center

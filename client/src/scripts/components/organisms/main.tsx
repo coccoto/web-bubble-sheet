@@ -6,15 +6,17 @@ import OptionForm from '@/scripts/components/molecules/optionForm'
 import AnswerSheet from '@/scripts/components/organisms/answerSheet'
 // contexts
 import Context from '@/scripts/contexts/context'
+// styles
+import styles from '@/styles/components/organisms/main.module.sass'
 
 export default () => {
 
     return (
-        <Context.Provider>
-            <div>
+        <div className={styles['container']}>
+            <Context.Provider>
                 <OptionForm></OptionForm>
                 <AnswerSheet></AnswerSheet>
-            </div>
-        </Context.Provider>
+            </Context.Provider>
+        </div>
     )
 }

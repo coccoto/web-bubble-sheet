@@ -5,6 +5,8 @@ import InputNumber from '@/scripts/components/atoms/inputNumber'
 import Button from '@/scripts/components/atoms/button'
 // contexts
 import Context from '@/scripts/contexts/context'
+// styles
+import styles from '@/styles/components/molecules/optionForm.module.sass'
 
 export default (): JSX.Element  => {
 
@@ -26,8 +28,8 @@ export default (): JSX.Element  => {
     }
 
     return (
-        <div>
-            <div>
+        <div className={styles['container']}>
+            <div className={styles['input']}>
                 <InputNumber
                     ref={refInputText[0]}
                     label={'QUESTIONS'}

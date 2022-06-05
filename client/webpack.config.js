@@ -69,7 +69,14 @@ const RULES = [
                         ]
                     }
                 },
-            }, 'sass-loader'
+            },{
+                loader: 'sass-loader',
+                options: {
+                    sassOptions: {
+                        includePaths: [path.resolve(SOURCE, 'styles')],
+                    }
+                }
+            }
         ]
     },{
         test: /\.(module)\.(sass)$/,
@@ -86,7 +93,14 @@ const RULES = [
                         ]
                     }
                 },
-            }, 'sass-loader'
+            },{
+                loader: 'sass-loader',
+                options: {
+                    sassOptions: {
+                        includePaths: [path.resolve(SOURCE, 'styles')],
+                    }
+                }
+            }
         ]
     },{
         test: /\.(html)$/,

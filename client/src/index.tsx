@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDom from 'react-dom/client';
 import App from '@/scripts/index'
-// styles
+// material
 import { CssBaseline } from '@mui/material'
 
 const elementApp: HTMLElement | null = document.getElementById('app')
