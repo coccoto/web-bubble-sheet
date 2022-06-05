@@ -1,32 +1,30 @@
 // react
 import React from 'react'
 // molecules
-import BubbleLine from '@/scripts/components/molecules/bubbleLine'
+import AnswerLine from '@/scripts/components/molecules/answerLine'
 // contexts
-import BubbleContext from '@/scripts/contexts/bubbleContext'
+import Context from '@/scripts/contexts/context'
 // hooks
 import useElementDuplication from '@/scripts/hooks/useElementDuplication'
 
 export default (): JSX.Element => {
 
-    const bubbleContext = React.useContext(BubbleContext.Context)
+    const context = React.useContext(Context.Context)
 
     const elementDuplication = useElementDuplication()
 
     return (
         <div>
-            <div>
-                {
-                    elementDuplication.duplicate(
-                        <BubbleLine
-                            checkboxNum={bubbleContext.bubble.checkboxNum}
-                            index={0}
-                        ></BubbleLine>,
-                        bubbleContext.bubble.lineNum,
-                        true
-                    )
-                }
-            </div>
+            {
+                elementDuplication.duplicate(
+                    <AnswerLine
+                        checkboxNum={context.bubble.checkboxNum}
+                        index={0}
+                    ></AnswerLine>,
+                    context.bubble.lineNum,
+                    true
+                )
+            }
         </div>
     )
 }

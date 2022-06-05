@@ -9,11 +9,12 @@ import '@/styles/index.module.sass'
 
 export default () => {
 
-
     return (
         <div>
             <Header></Header>
-            <Main></Main>
+            <div>
+                <Main></Main>
+            </div>
             <Footer></Footer>
         </div>
     )

@@ -20,9 +20,6 @@ export default (): Return => {
         }
         return result
     }
-
-    
-
     return {
         duplicate: duplicate
     }

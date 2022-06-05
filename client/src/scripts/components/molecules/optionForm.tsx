@@ -4,13 +4,11 @@ import React from 'react'
 import InputNumber from '@/scripts/components/atoms/inputNumber'
 import Button from '@/scripts/components/atoms/button'
 // contexts
-import BubbleContext from '@/scripts/contexts/bubbleContext'
-// material
-import Box from '@mui/material/Box'
+import Context from '@/scripts/contexts/context'
 
 export default (): JSX.Element  => {
 
-    const bubbleContext = React.useContext(BubbleContext.Context)
+    const context = React.useContext(Context.Context)
 
     const refInputText = [
         React.useRef<HTMLInputElement>(null),
@@ -21,31 +19,31 @@ export default (): JSX.Element  => {
         if (refInputText[0].current === null || refInputText[1].current === null) {
             throw new Error()
         }
-        bubbleContext.setBubble({
+        context.setBubble({
             lineNum: Number(refInputText[0].current.value),
             checkboxNum: Number(refInputText[1].current.value),
         })
     }
 
     return (
-        <Box>
-            <Box sx={{ display: 'flex' }}>
+        <div>
+            <div>
                 <InputNumber
                     ref={refInputText[0]}
                     label={'QUESTIONS'}
-                    defaultValue={String(bubbleContext.bubble.lineNum)}
+                    defaultValue={String(context.bubble.lineNum)}
                 ></InputNumber>
                 <InputNumber
                     ref={refInputText[1]}
                     label={'CHOICES'}
-                    defaultValue={String(bubbleContext.bubble.checkboxNum)}
+                    defaultValue={String(context.bubble.checkboxNum)}
                 ></InputNumber>
-            </Box>
-            <Box>
-                <Button
-                    handleSubmit={handleSubmit}
-                >CREATE</Button>
-            </Box>
-        </Box>
+            </div>
+            <div>
+                <Button handleSubmit={handleSubmit}>
+                    CREATE
+                </Button>
+            </div>
+        </div>
     )
 }

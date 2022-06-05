@@ -1,8 +1,9 @@
 // react
 import React from 'react'
 // material
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
+import {
+    Button
+} from '@mui/material'
 
 type Props = {
     children: string,
@@ -12,14 +13,14 @@ type Props = {
 export default (props: Props): JSX.Element  => {
 
     return (
-        <Box>
+        <div>
             <Button onClick={
                 (): void => {
                     props.handleSubmit()
                 }
             }
-            variant="contained"
+            variant='contained'
             >{props.children}</Button>
-        </Box>
+        </div>
     )
 }

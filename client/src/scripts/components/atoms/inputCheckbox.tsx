@@ -3,9 +3,10 @@ import React from 'react'
 // utils
 import numberToAlphabet from '@/scripts/utils/numberToAlphabet'
 // material
-import Box from '@mui/material/Box'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Checkbox from '@mui/material/Checkbox'
+import {
+    FormControlLabel,
+    Checkbox,
+} from '@mui/material'
 
 type Props = {
     index: number,
@@ -19,8 +20,10 @@ export default (props: Props): JSX.Element  => {
     }
 
     return (
-        <Box>
-            <FormControlLabel control={<Checkbox></Checkbox>} label={getLabel()}></FormControlLabel>
-        </Box>
+        <div>
+            <FormControlLabel
+                control={<Checkbox></Checkbox>}
+            label={getLabel()}></FormControlLabel>
+        </div>
     )
 }

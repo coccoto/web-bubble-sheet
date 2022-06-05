@@ -5,14 +5,16 @@ import OptionForm from '@/scripts/components/molecules/optionForm'
 // organisms
 import AnswerSheet from '@/scripts/components/organisms/answerSheet'
 // contexts
-import BubbleContext from '@/scripts/contexts/bubbleContext'
+import Context from '@/scripts/contexts/context'
 
 export default () => {
 
     return (
-        <BubbleContext.Provider>
-            <OptionForm></OptionForm>
-            <AnswerSheet></AnswerSheet>
-        </BubbleContext.Provider>
+        <Context.Provider>
+            <div>
+                <OptionForm></OptionForm>
+                <AnswerSheet></AnswerSheet>
+            </div>
+        </Context.Provider>
     )
 }

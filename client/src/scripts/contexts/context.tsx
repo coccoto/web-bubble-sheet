@@ -1,7 +1,7 @@
 // react
 import React from 'react'
 
-type BubbleContextType = {
+type ContextType = {
     bubble: {
         lineNum: number,
         checkboxNum: number,
@@ -16,27 +16,27 @@ type Props = {
     children: React.ReactNode;
 }
 
-const BubbleContext = React.createContext<BubbleContextType>({
+const Context = React.createContext<ContextType>({
     bubble: {
         lineNum: 5,
         checkboxNum: 4,
     },
-    setBubble: () => {}
+    setBubble: () => {},
 })
 
-const BubbleContextProvider = (props: Props): JSX.Element => {
-    const context: BubbleContextType = React.useContext(BubbleContext)
+const ContextProvider = (props: Props): JSX.Element => {
+    const context: ContextType = React.useContext(Context)
     const [bubble, setBubble] = React.useState(context.bubble)
     const shareContext = {bubble, setBubble}
 
     return (
-        <BubbleContext.Provider value={shareContext}>
+        <Context.Provider value={shareContext}>
             {props.children}
-        </BubbleContext.Provider>
+        </Context.Provider>
     )
 }
 
 export default {
-    Context: BubbleContext,
-    Provider: BubbleContextProvider,
+    Context: Context,
+    Provider: ContextProvider,
 }
