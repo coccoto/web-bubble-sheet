@@ -5,12 +5,12 @@ import numberToAlphabet from '@/scripts/utils/numberToAlphabet'
 // material
 import {
     FormControlLabel,
-    Checkbox,
 } from '@mui/material'
 
 type Props = {
     index: number,
-    label: React.ReactNode
+    label: React.ReactNode,
+    control: JSX.Element
 }
 
 export default (props: Props): JSX.Element  => {
@@ -22,8 +22,9 @@ export default (props: Props): JSX.Element  => {
     return (
         <div>
             <FormControlLabel
-                control={<Checkbox size={'small'}></Checkbox>}
-            label={getLabel()}></FormControlLabel>
+                control={props.control}
+                label={getLabel()}
+            ></FormControlLabel>
         </div>
     )
 }

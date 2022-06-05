@@ -12,7 +12,7 @@ dist/
 #
 # dotenv files
 #
-#.env
+.env
 
 #
 # Node.js files

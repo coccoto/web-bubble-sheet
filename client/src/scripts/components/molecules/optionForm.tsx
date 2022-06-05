@@ -30,7 +30,7 @@ export default (): JSX.Element  => {
     return (
         <div className={styles['container']}>
             <div className={styles['wrapper']}>
-                <div className={styles['input']}>
+                <div className={styles['input-wrapper']}>
                     <InputNumber
                         ref={refInputText[0]}
                         label={'QUESTIONS'}
@@ -38,7 +38,7 @@ export default (): JSX.Element  => {
                     ></InputNumber>
                     <InputNumber
                         ref={refInputText[1]}
-                        label={'CHOICES'}
+                        label={'BUBBLES'}
                         defaultValue={String(context.bubble.checkboxNum)}
                     ></InputNumber>
                 </div>
