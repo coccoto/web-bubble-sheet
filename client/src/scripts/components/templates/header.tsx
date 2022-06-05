@@ -1,15 +1,11 @@
 // react
 import React from 'react'
 // material
-import {
-    AppBar,
-    Toolbar,
-    IconButton,
-    Typography,
-} from '@mui/material'
-import {
-    Menu
-} from '@mui/icons-material'
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
+import Menu from '@mui/icons-material/Menu'
 
 export default (): JSX.Element  => {
 
@@ -21,9 +17,8 @@ export default (): JSX.Element  => {
                 <IconButton
                     edge={'start'}
                     color={'inherit'}
-                sx={{mr: '1rem'}}>
-                    <Menu></Menu>
-                </IconButton>
+                    sx={{mr: '1rem'}}
+                ><Menu></Menu></IconButton>
                 <Typography variant={'h6'}>
                     {headerTitle}
                 </Typography>

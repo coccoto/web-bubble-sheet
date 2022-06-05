@@ -3,9 +3,7 @@ import React from 'react'
 // atoms
 import InputCheckbox from '@/scripts/components/atoms/inputCheckbox'
 // material
-import {
-    Checkbox,
-} from '@mui/material'
+import Checkbox from '@mui/material/Checkbox'
 // styles
 import styles from '@/styles/components/molecules/lineNum.module.sass'
 

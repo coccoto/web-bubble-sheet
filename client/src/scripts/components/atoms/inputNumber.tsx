@@ -1,9 +1,7 @@
 // react
 import React from 'react'
 // material
-import {
-    TextField
-} from '@mui/material'
+import TextField from '@mui/material/TextField'
 // styles
 import styles from '@/styles/components/atoms/inputNumber.module.sass'
 

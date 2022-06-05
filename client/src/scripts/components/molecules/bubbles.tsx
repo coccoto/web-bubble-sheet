@@ -5,9 +5,7 @@ import InputCheckbox from '@/scripts/components/atoms/inputCheckbox'
 // hooks
 import useElementDuplication from '@/scripts/hooks/useElementDuplication'
 // material
-import {
-    Checkbox,
-} from '@mui/material'
+import Checkbox from '@mui/material/Checkbox'
 // styles
 import styles from '@/styles/components/molecules/bubbles.module.sass'
 

@@ -4,9 +4,7 @@ import React from 'react'
 import LineNum from '@/scripts/components/molecules/lineNum'
 import Bubbles from '@/scripts/components/molecules/bubbles'
 // material
-import {
-    TextField,
-} from '@mui/material'
+import TextField from '@mui/material/TextField'
 // styles
 import styles from '@/styles/components/organisms/answerLine.module.sass'
 

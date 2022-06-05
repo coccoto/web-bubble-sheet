@@ -3,9 +3,7 @@ import React from 'react'
 // utils
 import numberToAlphabet from '@/scripts/utils/numberToAlphabet'
 // material
-import {
-    FormControlLabel,
-} from '@mui/material'
+import FormControlLabel from '@mui/material/FormControlLabel'
 
 type Props = {
     index: number,
