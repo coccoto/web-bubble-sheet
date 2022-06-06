@@ -1,0 +1,48 @@
+#!/usr/bin/env node
+
+const path = require('path')
+
+/**
+ * root path setup
+ */
+global.ROOT = path.resolve(__dirname, '..', '..')
+
+/**
+ * module setup
+ */
+const http = require('http')
+const app = require(ROOT + '/server/app.js')
+
+/**
+ * use port number
+ */
+const PORT = 3000
+
+/**
+ * port setup
+ */
+app.set('port', PORT)
+
+/**
+ * create HTTP server
+ */
+const server = http.createServer(app)
+
+/**
+ * Error handle
+ */
+const onError = (error) => {
+    console.log(error)
+}
+
+const onListening = () => {
+    const address = server.address()
+    console.log('port: ' + address.port)
+}
+
+/**
+ * release
+ */
+server.listen(app.get('port'))
+server.on('error', onError)
+server.on('listening', onListening)
