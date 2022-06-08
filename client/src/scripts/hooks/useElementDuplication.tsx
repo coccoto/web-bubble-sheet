@@ -2,12 +2,13 @@
 import React from 'react'
 
 type Return = {
-    duplicate: (element: JSX.Element, productionNum: number, isIndex: boolean) => JSX.Element[]
+    generalDuplicate: (element: JSX.Element, productionNum: number, isIndex: boolean) => JSX.Element[],
+    duplicateMenu: (element: JSX.Element, menuData: MstMenuType) => JSX.Element[],
 }
 
 export default (): Return => {
 
-    const duplicate = (element: JSX.Element, productionNum: number, isIndex: boolean): JSX.Element[] => {
+    const generalDuplicate = (element: JSX.Element, productionNum: number, isIndex: boolean): JSX.Element[] => {
         const result: JSX.Element[] = []
 
         for (let i = 0; i < productionNum; i ++) {
@@ -20,7 +21,19 @@ export default (): Return => {
         }
         return result
     }
+
+    const duplicateMenu = (element: JSX.Element, menuData: MstMenuType): JSX.Element[] => {
+        const result: JSX.Element[] = []
+
+        menuData.result.map((value: MstMenuValueType, i: number) => {
+            element = React.cloneElement(element, {key: i, children: value['name'], href: value['url']})
+            result.push(element)
+        })
+        return result
+    }
+
     return {
-        duplicate: duplicate
+        generalDuplicate: generalDuplicate,
+        duplicateMenu: duplicateMenu,
     }
 }

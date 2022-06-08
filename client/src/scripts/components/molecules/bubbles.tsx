@@ -20,7 +20,7 @@ export default (props: Props): JSX.Element  => {
     return (
         <div className={styles['container']}>
             {
-                elementDuplication.duplicate(
+                elementDuplication.generalDuplicate(
                     <InputCheckbox
                         index={0}
                         label={'isAlphabet'}

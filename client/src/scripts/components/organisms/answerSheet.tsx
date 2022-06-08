@@ -18,7 +18,7 @@ export default (): JSX.Element => {
     return (
         <div className={styles['container']}>
             {
-                elementDuplication.duplicate(
+                elementDuplication.generalDuplicate(
                     <AnswerLine
                         checkboxNum={context.bubble.checkboxNum}
                         index={0}

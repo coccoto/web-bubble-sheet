@@ -6,7 +6,7 @@ module.exports = (app) => {
         return
     })
 
-    app.route('/api/getMstMenu').get(async (req, res) => {
+    app.route('/api/getMstMenu').post(async (req, res) => {
         const menuController = new MenuController()
         const result = await menuController.main()
         res.json({result: result})

@@ -1,2 +1,9 @@
 @use 'utils/colors'
 @use 'utils/mixins'
+
+.menu
+    @include mixins.flex(flex-end)
+    margin-left: auto
+
+    @include mixins.media()
+        gap: 1rem

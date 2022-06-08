@@ -16,7 +16,6 @@ module.exports = class {
             password: env['PASSWORD'],
             database: env['DATABASE'],
         })
-        console.log('connect')
         this.db = conn
     }
 }
