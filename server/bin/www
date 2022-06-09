@@ -16,7 +16,7 @@ const app = require(ROOT + '/server/app.js')
 /**
  * use port number
  */
-const PORT = 3000
+const PORT = 3100
 
 /**
  * port setup
