@@ -14,8 +14,6 @@ import styles from '@/styles/components/templates/header.module.sass'
 
 export default (): JSX.Element  => {
 
-    const headerTitle: React.ReactNode = 'Web Bubble Sheet'
-
     const [menu, setMenu] = React.useState({
         result: [{id: 0, name: '', url: ''}]
     })
@@ -34,7 +32,7 @@ export default (): JSX.Element  => {
         <AppBar position={'static'}>
             <Toolbar>
                 <Typography variant={'h6'}>
-                    {headerTitle}
+                    Web Bubble Sheet
                 </Typography>
                 <div className={styles['menu']}>
                     {
