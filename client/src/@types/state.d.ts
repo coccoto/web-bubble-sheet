@@ -3,5 +3,5 @@ type MstMenuType = {
 }
 
 type MstMenuValueType = {
-    id: number, name: string, url: string,
+    name: string, url: string,
 }
