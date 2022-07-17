@@ -3,7 +3,7 @@ import React from 'react'
 // hooks
 import useElementDuplication from '@/scripts/hooks/useElementDuplication'
 // utils
-import FetchApi from '@/scripts/utils/fetchApi'
+import FetchApi from '@/scripts/utils/common/fetchApi'
 // material
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'

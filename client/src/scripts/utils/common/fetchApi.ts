@@ -1,4 +1,4 @@
-export default async (path: string): Promise<MstMenuType> => {
+export default async (path: string): Promise<any> => {
     const response = await fetch(location.origin + path, {
         method: 'post'
     })

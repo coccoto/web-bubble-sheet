@@ -3,9 +3,9 @@ const MenuModel = require(ROOT + '/server/src/models/menuModel')
 module.exports = class {
 
     async getMstMenu() {
-        const mstMenu = new MenuModel()
-        await mstMenu.connect()
-        return await mstMenu.getMstMenu()
+        const menuModel = new MenuModel()
+        await menuModel.connect()
+        return await menuModel.getMstMenu()
     }
 
     async main() {
