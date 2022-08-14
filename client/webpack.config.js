@@ -3,7 +3,6 @@ const htmlWebpackPlugin = require('html-webpack-plugin')
 
 const ENTRY_FILE = 'index.tsx'
 const BUNDLE_FILE = 'index.js'
-
 const SOURCE = path.resolve(__dirname, 'src')
 const OUTPUT = path.resolve(__dirname, 'dist')
 
@@ -17,6 +16,7 @@ module.exports = (env, argv) => {
         },
         output: {
             path: path.resolve(OUTPUT),
+            publicPath: '/',
             filename: BUNDLE_FILE,
         },
         devtool: IS_DEVELOPMENT ? 'inline-source-map' : IS_DEVELOPMENT,
@@ -43,9 +43,7 @@ module.exports = (env, argv) => {
         plugins: [
             new htmlWebpackPlugin({
                 template: path.resolve(SOURCE, 'index.html'),
-                minify: {
-                    collapseWhitespace: IS_DEVELOPMENT ? false : true
-                }
+                minify: IS_DEVELOPMENT ? false : true
             }),
         ],
     }
