@@ -16,7 +16,7 @@ module.exports = (env, argv) => {
         },
         output: {
             path: path.resolve(OUTPUT),
-            publicPath: '/',
+            publicPath: env['ASSET_PATH'] || '/',
             filename: BUNDLE_FILE,
         },
         devtool: IS_DEVELOPMENT ? 'inline-source-map' : IS_DEVELOPMENT,
