@@ -1,7 +1,7 @@
 // react
 import React from 'react'
 // atoms
-import InputCheckbox from '@/scripts/components/atoms/inputCheckbox'
+import InputControl from '@/scripts/components/atoms/inputControl'
 // hooks
 import useElementDuplication from '@/scripts/hooks/useElementDuplication'
 // material
@@ -21,11 +21,11 @@ export default (props: Props): JSX.Element  => {
         <div className={styles['container']}>
             {
                 elementDuplication.generalDuplicate(
-                    <InputCheckbox
+                    <InputControl
                         index={0}
                         label={'isAlphabet'}
                         control={<Checkbox size={'small'}></Checkbox>}
-                    ></InputCheckbox>
+                    ></InputControl>
                     , props.checkboxNum
                     , true
                 )

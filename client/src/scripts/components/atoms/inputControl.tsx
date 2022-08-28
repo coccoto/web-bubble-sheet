@@ -22,6 +22,7 @@ export default (props: Props): JSX.Element  => {
             <FormControlLabel
                 control={props.control}
                 label={getLabel()}
+                value={getLabel()}
             ></FormControlLabel>
         </div>
     )
