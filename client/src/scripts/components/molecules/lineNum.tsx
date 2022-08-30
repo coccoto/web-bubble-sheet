@@ -29,22 +29,31 @@ export default (props: Props): JSX.Element  => {
                     <Checkbox
                         size={'small'}
                         color={'success'}
+                        sx={{padding: '0 9px'}}
                     ></Checkbox>
                 }
             ></InputControl>
             <RadioGroup row>
                 <InputControl
                     index={0}
-                    label={'TRUE'}
+                    label={'OK'}
                     control={
-                        <Radio size={'small'} color={'secondary'}></Radio>
+                        <Radio
+                            size={'small'}
+                            color={'secondary'}
+                            sx={{padding: '0 9px'}}
+                        ></Radio>
                     }
                 ></InputControl>
                 <InputControl
                     index={0}
-                    label={'FALSE'}
+                    label={'REVIEW'}
                     control={
-                        <Radio size={'small'} color={'secondary'}></Radio>
+                        <Radio
+                            size={'small'}
+                            color={'secondary'}
+                            sx={{padding: '0 9px'}}
+                        ></Radio>
                     }
                 ></InputControl>
             </RadioGroup>

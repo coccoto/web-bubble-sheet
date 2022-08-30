@@ -25,7 +25,6 @@ export default (props: Props): JSX.Element  => {
             ></Bubbles>
             <TextField
                 size={'small'}
-                label={'MEMO'}
                 fullWidth
             ></TextField>
         </div>
