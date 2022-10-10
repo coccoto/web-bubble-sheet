@@ -6,6 +6,7 @@ import InputControl from '@/scripts/components/atoms/inputControl'
 import Checkbox from '@mui/material/Checkbox'
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
+import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
 // styles
 import styles from '@/styles/components/molecules/lineNum.module.sass'
 
@@ -27,9 +28,9 @@ export default (props: Props): JSX.Element  => {
                 label={getLabel()}
                 control={
                     <Checkbox
-                        size={'small'}
-                        color={'success'}
                         sx={{padding: '0 9px'}}
+                        icon={<EmojiFlagsIcon></EmojiFlagsIcon>}
+                        checkedIcon={<EmojiFlagsIcon color={'warning'}></EmojiFlagsIcon>}
                     ></Checkbox>
                 }
             ></InputControl>
@@ -40,7 +41,7 @@ export default (props: Props): JSX.Element  => {
                     control={
                         <Radio
                             size={'small'}
-                            color={'secondary'}
+                            color={'success'}
                             sx={{padding: '0 9px'}}
                         ></Radio>
                     }
@@ -51,7 +52,7 @@ export default (props: Props): JSX.Element  => {
                     control={
                         <Radio
                             size={'small'}
-                            color={'secondary'}
+                            color={'success'}
                             sx={{padding: '0 9px'}}
                         ></Radio>
                     }
