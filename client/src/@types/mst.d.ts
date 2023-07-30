@@ -2,5 +2,5 @@ type MstMenuType = {
     result: MstMenuValueType[]
 }
 type MstMenuValueType = {
-    menuName: string, url: string,
+    menu_name: string, url: string,
 }

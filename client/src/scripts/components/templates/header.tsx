@@ -15,7 +15,7 @@ import styles from '@/styles/components/templates/header.module.sass'
 export default (): JSX.Element  => {
 
     const [menu, setMenu] = React.useState({
-        result: [{menuName: '', url: ''}]
+        result: [{menu_name: '', url: ''}]
     })
 
     React.useEffect(() => {
