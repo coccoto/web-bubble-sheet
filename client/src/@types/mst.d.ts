@@ -2,5 +2,5 @@ type MstMenuType = {
     result: MstMenuValueType[]
 }
 type MstMenuValueType = {
-    menu_name: string, url: string,
+    system_name: string, screen_name: string, origin: string, path: string,
 }

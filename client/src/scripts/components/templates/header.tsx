@@ -15,7 +15,7 @@ import styles from '@/styles/components/templates/header.module.sass'
 export default (): JSX.Element  => {
 
     const [menu, setMenu] = React.useState({
-        result: [{menu_name: '', url: ''}]
+        result: [{system_name: '', screen_name: '', origin: '', path: ''}]
     })
 
     React.useEffect(() => {

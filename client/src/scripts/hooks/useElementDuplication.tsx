@@ -26,7 +26,7 @@ export default (): Return => {
         const result: JSX.Element[] = []
 
         menuData.result.map((value: MstMenuValueType, i: number) => {
-            element = React.cloneElement(element, {key: i, children: value['menu_name'], href: value['url']})
+            element = React.cloneElement(element, {key: i, children: value['system_name'], href: value['origin'] + value['path']})
             result.push(element)
         })
         return result
