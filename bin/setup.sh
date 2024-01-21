@@ -1,33 +1,40 @@
-#!/bin/sh
+#!/bin/bash
 set -eu
-SCRIPT_DIR=$(cd $(dirname $0) && pwd)
-cd $SCRIPT_DIR
-
-function move() {
-    cd ..
-    cd $1
-    return 0
-}
 
 function npmInstall() {
-    move $1
-    npm install
-    cd $SCRIPT_DIR
-    return 0
+    cd "$1"
+    npm install || exit 1
 }
 
-function release() {
-    move $1
-    npm run release
-    cd $SCRIPT_DIR
-    return 0
+function build() {
+    cd "$1"
+    npm run release || exit 1
 }
 
-npmInstall client
-release client
-echo 'client'
+function initenv() {
+    cd "$1"
+    cp .env.example .env || exit 1
+}
 
-npmInstall server
-echo 'server'
+# 引数をセットする
+IS_DEVELOPMENT="${1:-production}"
 
-echo 'setup complete'
+# 本スクリプトファイルのディレクトリをセットする
+SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+
+# client ディレクトリをセットする
+CLIENT_DIR="$SCRIPT_DIR/../client"
+# server ディレクトリをセットする
+SERVER_DIR="$SCRIPT_DIR/../server"
+
+# client の処理を開始する
+npmInstall "$CLIENT_DIR"
+build "$CLIENT_DIR"
+
+echo 'client complete'
+
+# server の処理を開始する
+npmInstall "$SERVER_DIR"
+initenv "$SERVER_DIR"
+
+echo 'server complete'

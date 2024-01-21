@@ -1,13 +1,18 @@
-#!/bin/sh
+#!/bin/bash
 set -eu
-SCRIPT_DIR=$(cd $(dirname $0) && pwd)
-cd $SCRIPT_DIR
 
-function move() {
-    cd ..
-    cd $1
-    return 0
+function runServer() {
+    cd "$1"
+    npm run start || exit 1
 }
 
-move server
-npm start
+# 本スクリプトファイルのディレクトリをセットする
+SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+
+# server ディレクトリをセットする
+SERVER_DIR="$SCRIPT_DIR/../server"
+
+# server の処理を開始する
+runServer "$SERVER_DIR"
+
+echo 'server complete'
