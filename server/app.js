@@ -1,22 +1,17 @@
 const Express = require('express')
-
-/**
- * routes setup
- */
-const Router = require(ROOT + '/server/routes/index')
-
 const app = Express()
 
-/**
- * static setup
- */
+// Set up routes
+const Router = require(ROOT + '/server/routes/index')
+Router(app)
+
+// Serve static files
 app.use(Express.static(ROOT + '/client/dist'))
 
-/**
- * request option
- */
+// Enable JSON parsing
 app.use(Express.json())
+
+// Enable URL-encoded data parsing
 app.use(Express.urlencoded({ extended: true }))
 
-Router(app)
 module.exports = app

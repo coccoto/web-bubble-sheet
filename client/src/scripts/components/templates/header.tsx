@@ -14,14 +14,14 @@ import styles from '@/styles/components/templates/header.module.sass'
 
 export default (): JSX.Element  => {
 
-    const [menu, setMenu] = React.useState({
-        result: [{system_name: '', screen_name: '', origin: '', path: ''}]
+    const [menuList, setMenuList] = React.useState({
+        result: [{id: 0, system_name: '', screen_name: '', origin: '', path: ''}]
     })
 
     React.useEffect(() => {
         const fetchApi = async () => {
-            const data = await FetchApi('/api/getMstMenu')
-            await setMenu(data)
+            const data = await FetchApi('/api/get/menu-list')
+            await setMenuList(data)
         }
         fetchApi()
     }, [])
@@ -38,7 +38,7 @@ export default (): JSX.Element  => {
                     {
                         elementDuplication.duplicateMenu(
                             <Button sx={{ color: 'white' }}></Button>,
-                            menu
+                            menuList
                         )
                     }
                 </div>

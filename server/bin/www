@@ -2,47 +2,38 @@
 
 const path = require('path')
 
-/**
- * root path setup
- */
+// Set the global ROOT variable
 global.ROOT = path.resolve(__dirname, '..', '..')
 
-/**
- * module setup
- */
-const http = require('http')
+// Set process.env
+const dotenv = require('dotenv')
+dotenv.config()
+
+const { logger } = require('@coccoto/node-logmanager')
 const app = require(ROOT + '/server/app.js')
 
-/**
- * use port number
- */
+// Configure port
 const PORT = 3100
-
-/**
- * port setup
- */
 app.set('port', PORT)
 
-/**
- * create HTTP server
- */
+// Create HTTP server
+const http = require('http')
 const server = http.createServer(app)
 
-/**
- * Error handle
- */
+// Error handling during server startup
 const onError = (error) => {
-    console.log(error)
+    logger.error(error)
 }
 
+// Handle server listening events
 const onListening = () => {
     const address = server.address()
-    console.log('port: ' + address.port)
+    const message = `Local: http://localhost:${address.port}/`
+    console.info(message)
+    logger.info(message)
 }
 
-/**
- * release
- */
+// Start server with error and listening event handlers
 server.listen(app.get('port'))
 server.on('error', onError)
 server.on('listening', onListening)

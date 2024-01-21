@@ -1,26 +1,20 @@
-#
 # log files
-#
 logs/
 *.log
 
-#
 # builded files
-#
 dist/
 
-#
-# dotenv files
-#
+# env files
 .env
 
-#
 # Node.js files
-#
 node_modules/
 
-#
+# next.js
+.next
+next-env.d.ts
+
 # OS generated files
-#
 .DS_Store
 Thumbs.db

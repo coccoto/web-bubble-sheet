@@ -1,23 +1,24 @@
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 
-const ENTRY_FILE = 'index.tsx'
-const BUNDLE_FILE = 'index.js'
+const PRODUCT_URL = 'https://webbubblesheet.coccoto.com/'
+
 const SOURCE = path.resolve(__dirname, 'src')
 const OUTPUT = path.resolve(__dirname, 'dist')
 
 module.exports = (env, argv) => {
 
-    const IS_DEVELOPMENT = argv.mode === 'development';
+    const IS_DEVELOPMENT = argv.mode === 'development'
+    const ASSET_PATH = IS_DEVELOPMENT ? '/' : PRODUCT_URL
 
     return {
         entry: {
-            index: path.resolve(SOURCE, ENTRY_FILE),
+            index: path.resolve(SOURCE, 'index.tsx'),
         },
         output: {
             path: path.resolve(OUTPUT),
-            publicPath: env['ASSET_PATH'] || '/',
-            filename: BUNDLE_FILE,
+            publicPath: ASSET_PATH,
+            filename: 'index.js',
         },
         devtool: IS_DEVELOPMENT ? 'inline-source-map' : IS_DEVELOPMENT,
         resolve: {

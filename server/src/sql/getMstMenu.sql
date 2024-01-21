@@ -1,1 +1,0 @@
-SELECT * FROM view_menu;
