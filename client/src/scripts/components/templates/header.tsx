@@ -3,7 +3,7 @@ import React from 'react'
 // hooks
 import useElementDuplication from '@/scripts/hooks/useElementDuplication'
 // utils
-import FetchApi from '@/scripts/utils/common/fetchApi'
+import fetchApi from '@/scripts/utils/fetchApi'
 // material
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
@@ -14,16 +14,16 @@ import styles from '@/styles/components/templates/header.module.sass'
 
 export default (): JSX.Element  => {
 
-    const [menuList, setMenuList] = React.useState({
+    const [menuList, setMenuList] = React.useState<MenuListType>({
         result: [{id: 0, system_name: '', screen_name: '', origin: '', path: ''}]
     })
 
     React.useEffect(() => {
-        const fetchApi = async () => {
-            const data = await FetchApi('/api/get/menu-list')
-            await setMenuList(data)
+        const postRequest = async () => {
+            const response = await fetchApi<MenuListType>('/api/get/menu-list', { method: 'post' })
+            await setMenuList(response)
         }
-        fetchApi()
+        postRequest()
     }, [])
 
     const elementDuplication = useElementDuplication()
