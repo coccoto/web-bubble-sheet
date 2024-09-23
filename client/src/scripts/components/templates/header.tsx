@@ -1,7 +1,5 @@
 // react
 import React from 'react'
-// hooks
-import useElementDuplication from '@/scripts/hooks/useElementDuplication'
 // utils
 import fetchApi from '@/scripts/utils/fetchApi'
 // material
@@ -26,8 +24,6 @@ export default (): JSX.Element  => {
         postRequest()
     }, [])
 
-    const elementDuplication = useElementDuplication()
-
     return (
         <AppBar position={'static'}>
             <Toolbar>
@@ -36,10 +32,13 @@ export default (): JSX.Element  => {
                 </Typography>
                 <div className={styles['menu']}>
                     {
-                        elementDuplication.duplicateMenu(
-                            <Button sx={{ color: 'white' }}></Button>,
-                            menuList
-                        )
+                        menuList.result.map((value, index) => {
+                            return <Button
+                                sx={{ color: 'white' }}    
+                                key={value['id']}
+                                href={value['origin'] + value['path']}
+                            >{value['app_name']}</Button>
+                        })
                     }
                 </div>
             </Toolbar>
