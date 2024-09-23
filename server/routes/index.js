@@ -8,7 +8,7 @@ module.exports = (app) => {
         return
     })
 
-    app.route(['/api/get/menu-list']).post(async (req, res) => {
+    app.route(['/api/fetch/menu-list']).post(async (req, res) => {
         const endpoint = req.url
         try {
             const menuListController = new MenuListController(req, res)

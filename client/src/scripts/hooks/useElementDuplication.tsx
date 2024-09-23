@@ -3,7 +3,7 @@ import React from 'react'
 
 type Return = {
     generalDuplicate: (element: JSX.Element, productionNum: number, isIndex: boolean) => JSX.Element[],
-    duplicateMenu: (element: JSX.Element, menuData: MenuListType) => JSX.Element[],
+    duplicateMenu: (element: JSX.Element, menuList: MenuListType) => JSX.Element[],
 }
 
 export default (): Return => {
@@ -22,11 +22,11 @@ export default (): Return => {
         return result
     }
 
-    const duplicateMenu = (element: JSX.Element, menuData: MenuListType): JSX.Element[] => {
+    const duplicateMenu = (element: JSX.Element, menuList: MenuListType): JSX.Element[] => {
         const result: JSX.Element[] = []
 
-        menuData.result.map((value: MenuListResultType) => {
-            element = React.cloneElement(element, {key: value['id'], children: value['system_name'], href: value['origin'] + value['path']})
+        menuList.result.map((value: MenuListResultType) => {
+            element = React.cloneElement(element, {key: value['id'], children: value['app_name'], href: value['origin'] + value['path']})
             result.push(element)
         })
         return result

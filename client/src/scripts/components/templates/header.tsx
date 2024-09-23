@@ -15,12 +15,12 @@ import styles from '@/styles/components/templates/header.module.sass'
 export default (): JSX.Element  => {
 
     const [menuList, setMenuList] = React.useState<MenuListType>({
-        result: [{id: 0, system_name: '', screen_name: '', origin: '', path: ''}]
+        result: []
     })
 
     React.useEffect(() => {
         const postRequest = async () => {
-            const response = await fetchApi<MenuListType>('/api/get/menu-list', { method: 'post' })
+            const response = await fetchApi<MenuListType>('/api/fetch/menu-list', { method: 'post' })
             await setMenuList(response)
         }
         postRequest()

@@ -4,9 +4,7 @@ import React from 'react'
 import InputControl from '@/scripts/components/atoms/inputControl'
 // material
 import Checkbox from '@mui/material/Checkbox'
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import EmojiFlagsIcon from '@mui/icons-material/EmojiFlags';
+import Typography from '@mui/material/Typography'
 // styles
 import styles from '@/styles/components/molecules/lineNum.module.sass'
 
@@ -23,41 +21,21 @@ export default (props: Props): JSX.Element  => {
 
     return (
         <div className={styles['container']}>
-            <InputControl
-                index={0}
-                label={getLabel()}
-                control={
-                    <Checkbox
-                        sx={{padding: '0 9px'}}
-                        icon={<EmojiFlagsIcon></EmojiFlagsIcon>}
-                        checkedIcon={<EmojiFlagsIcon color={'warning'}></EmojiFlagsIcon>}
-                    ></Checkbox>
-                }
-            ></InputControl>
-            <RadioGroup row>
+            <Typography variant={'body1'}>
+                {getLabel()}
+            </Typography>
+            <div className={styles['wrapper']}>
                 <InputControl
                     index={0}
                     label={'OK'}
-                    control={
-                        <Radio
-                            size={'small'}
-                            color={'success'}
-                            sx={{padding: '0 9px'}}
-                        ></Radio>
-                    }
+                    control={<Checkbox size={'small'} color={'success'}></Checkbox>}
                 ></InputControl>
                 <InputControl
                     index={0}
-                    label={'REVIEW'}
-                    control={
-                        <Radio
-                            size={'small'}
-                            color={'success'}
-                            sx={{padding: '0 9px'}}
-                        ></Radio>
-                    }
+                    label={'REVIEW LATER'}
+                    control={<Checkbox size={'small'} color={'success'}></Checkbox>}
                 ></InputControl>
-            </RadioGroup>
+            </div>
         </div>
     )
 }

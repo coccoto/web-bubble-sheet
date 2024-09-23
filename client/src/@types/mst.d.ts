@@ -3,8 +3,8 @@ type MenuListType = {
 }
 type MenuListResultType = {
     id: integer,
-    system_name: string,
-    screen_name: string,
+    app_name: string,
+    feature_name: string,
     origin: string,
     path: string,
 }
