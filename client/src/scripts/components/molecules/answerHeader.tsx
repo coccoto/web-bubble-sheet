@@ -32,7 +32,7 @@ export default (props: Props): JSX.Element  => {
                 ></InputControl>
                 <InputControl
                     index={0}
-                    label={'REVIEW LATER'}
+                    label={'FLAG'}
                     control={<Checkbox size={'small'} color={'warning'}></Checkbox>}
                 ></InputControl>
             </div>
