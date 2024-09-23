@@ -6,7 +6,7 @@ import InputControl from '@/scripts/components/atoms/inputControl'
 import Checkbox from '@mui/material/Checkbox'
 import Typography from '@mui/material/Typography'
 // styles
-import styles from '@/styles/components/molecules/answerLineHeader.module.sass'
+import styles from '@/styles/components/molecules/answerHeader.module.sass'
 
 type Props = {
     index: number

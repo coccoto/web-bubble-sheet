@@ -1,7 +1,7 @@
 // react
 import React from 'react'
 // molecules
-import AnswerLineHeader from '@/scripts/components/molecules/answerLineHeader'
+import AnswerHeader from '@/scripts/components/molecules/answerHeader'
 import Bubbles from '@/scripts/components/molecules/bubbles'
 // material
 import TextField from '@mui/material/TextField'
@@ -17,9 +17,9 @@ export default (props: Props): JSX.Element  => {
 
     return (
         <div>
-            <AnswerLineHeader
+            <AnswerHeader
                 index={props.index}
-            ></AnswerLineHeader>
+            ></AnswerHeader>
             <Bubbles
                 bubbleNum={props.bubbleNum}
             ></Bubbles>
