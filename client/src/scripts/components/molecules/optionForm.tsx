@@ -22,8 +22,8 @@ export default (): JSX.Element  => {
             throw new Error()
         }
         context.setBubble({
-            lineNum: Number(refInputText[0].current.value),
-            checkboxNum: Number(refInputText[1].current.value),
+            questionNum: Number(refInputText[0].current.value),
+            bubbleNum: Number(refInputText[1].current.value),
         })
     }
 
@@ -34,12 +34,12 @@ export default (): JSX.Element  => {
                     <InputNumber
                         ref={refInputText[0]}
                         label={'QUESTIONS'}
-                        defaultValue={String(context.bubble.lineNum)}
+                        defaultValue={String(context.bubble.questionNum)}
                     ></InputNumber>
                     <InputNumber
                         ref={refInputText[1]}
                         label={'BUBBLES'}
-                        defaultValue={String(context.bubble.checkboxNum)}
+                        defaultValue={String(context.bubble.bubbleNum)}
                     ></InputNumber>
                 </div>
                 <div>

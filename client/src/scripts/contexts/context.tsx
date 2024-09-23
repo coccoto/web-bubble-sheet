@@ -3,12 +3,12 @@ import React from 'react'
 
 type ContextType = {
     bubble: {
-        lineNum: number,
-        checkboxNum: number,
+        questionNum: number,
+        bubbleNum: number,
     },
     setBubble: React.Dispatch<React.SetStateAction<{
-        lineNum: number;
-        checkboxNum: number;
+        questionNum: number;
+        bubbleNum: number;
     }>>
 }
 
@@ -18,8 +18,8 @@ type Props = {
 
 const Context = React.createContext<ContextType>({
     bubble: {
-        lineNum: 5,
-        checkboxNum: 4,
+        questionNum: 5,
+        bubbleNum: 4,
     },
     setBubble: () => {},
 })

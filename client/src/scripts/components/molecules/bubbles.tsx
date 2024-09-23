@@ -10,7 +10,7 @@ import Checkbox from '@mui/material/Checkbox'
 import styles from '@/styles/components/molecules/bubbles.module.sass'
 
 type Props = {
-    checkboxNum: number,
+    bubbleNum: number,
 }
 
 export default (props: Props): JSX.Element  => {
@@ -26,7 +26,7 @@ export default (props: Props): JSX.Element  => {
                         label={'isAlphabet'}
                         control={<Checkbox size={'small'}></Checkbox>}
                     ></InputControl>
-                    , props.checkboxNum
+                    , props.bubbleNum
                 )
             }
         </div>

@@ -20,10 +20,10 @@ export default (): JSX.Element => {
             {
                 elementDuplication.generalDuplicate(
                     <AnswerLine
-                        checkboxNum={context.bubble.checkboxNum}
+                        bubbleNum={context.bubble.bubbleNum}
                         index={0}
                     ></AnswerLine>,
-                    context.bubble.lineNum,
+                    context.bubble.questionNum,
                 )
             }
         </div>

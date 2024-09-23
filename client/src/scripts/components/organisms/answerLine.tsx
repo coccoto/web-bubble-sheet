@@ -9,7 +9,7 @@ import TextField from '@mui/material/TextField'
 import styles from '@/styles/components/organisms/answerLine.module.sass'
 
 type Props = {
-    checkboxNum: number,
+    bubbleNum: number,
     index: number
 }
 
@@ -21,7 +21,7 @@ export default (props: Props): JSX.Element  => {
                 index={props.index}
             ></AnswerLineHeader>
             <Bubbles
-                checkboxNum={props.checkboxNum}
+                bubbleNum={props.bubbleNum}
             ></Bubbles>
             <TextField
                 size={'small'}
