@@ -7,7 +7,7 @@ import Context from '@/scripts/contexts/context'
 // hooks
 import useElementDuplication from '@/scripts/hooks/useElementDuplication'
 // styles
-import styles from '@/styles/components/organisms/answerSheet.module.sass'
+import styles from '@/styles/components/organisms/answerForm.module.sass'
 
 export default (): JSX.Element => {
 
@@ -24,7 +24,6 @@ export default (): JSX.Element => {
                         index={0}
                     ></AnswerLine>,
                     context.bubble.lineNum,
-                    true
                 )
             }
         </div>

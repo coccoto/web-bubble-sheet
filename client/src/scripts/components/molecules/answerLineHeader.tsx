@@ -6,7 +6,7 @@ import InputControl from '@/scripts/components/atoms/inputControl'
 import Checkbox from '@mui/material/Checkbox'
 import Typography from '@mui/material/Typography'
 // styles
-import styles from '@/styles/components/molecules/lineNum.module.sass'
+import styles from '@/styles/components/molecules/answerLineHeader.module.sass'
 
 type Props = {
     index: number
@@ -28,12 +28,12 @@ export default (props: Props): JSX.Element  => {
                 <InputControl
                     index={0}
                     label={'OK'}
-                    control={<Checkbox size={'small'} color={'success'}></Checkbox>}
+                    control={<Checkbox size={'small'} color={'warning'}></Checkbox>}
                 ></InputControl>
                 <InputControl
                     index={0}
                     label={'REVIEW LATER'}
-                    control={<Checkbox size={'small'} color={'success'}></Checkbox>}
+                    control={<Checkbox size={'small'} color={'warning'}></Checkbox>}
                 ></InputControl>
             </div>
         </div>

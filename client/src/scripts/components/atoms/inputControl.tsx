@@ -4,6 +4,8 @@ import React from 'react'
 import numberToAlphabet from '@/scripts/utils/numberToAlphabet'
 // material
 import FormControlLabel from '@mui/material/FormControlLabel'
+// styles
+import styles from '@/styles/components/atoms/inputControl.module.sass'
 
 type Props = {
     index: number,

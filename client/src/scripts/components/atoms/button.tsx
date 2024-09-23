@@ -2,6 +2,8 @@
 import React from 'react'
 // material
 import Button from '@mui/material/Button'
+// styles
+import styles from '@/styles/components/atoms/button.module.sass'
 
 type Props = {
     children: string,

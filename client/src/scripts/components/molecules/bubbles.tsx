@@ -27,7 +27,6 @@ export default (props: Props): JSX.Element  => {
                         control={<Checkbox size={'small'}></Checkbox>}
                     ></InputControl>
                     , props.checkboxNum
-                    , true
                 )
             }
         </div>
