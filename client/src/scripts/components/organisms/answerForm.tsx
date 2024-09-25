@@ -1,7 +1,7 @@
 // react
 import React from 'react'
 // organisms
-import AnswerLine from '@/scripts/components/organisms/answerLine'
+import AnswerLine from '@/scripts/components/molecules/answerLine'
 // contexts
 import Context from '@/scripts/contexts/context'
 // styles
@@ -14,11 +14,11 @@ export default (): JSX.Element => {
     return (
         <div className={styles['container']}>
             {
-                Array.from({ length: context.bubble.questionNum }, (_, index) => {
+                Array.from({ length: context.answerFormStatus.questionNum }, (_, index) => {
                     return <AnswerLine
                         key={index}
                         index={index}
-                        bubbleNum={context.bubble.bubbleNum}
+                        bubbleNum={context.answerFormStatus.bubbleNum}
                     ></AnswerLine>
                 })
             }

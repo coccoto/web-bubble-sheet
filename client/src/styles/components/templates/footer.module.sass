@@ -3,6 +3,8 @@
 @use 'utils/mixins'
     
 .container
-    @include mixins.grid(center)
+    display: grid
+    justify-content: center
+    align-items: center
     height: 6rem
     border-top: 1px solid colors.$border-color

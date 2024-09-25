@@ -1,9 +1,9 @@
 // react
 import React from 'react'
-// molecules
-import OptionForm from '@/scripts/components/molecules/optionForm'
 // organisms
 import AnswerForm from '@/scripts/components/organisms/answerForm'
+import OptionForm from '@/scripts/components/organisms/optionForm'
+import Scoreboard from '@/scripts/components/organisms/scoreboard'
 // contexts
 import Context from '@/scripts/contexts/context'
 // styles
@@ -14,6 +14,7 @@ export default () => {
     return (
         <div className={styles['container']}>
             <Context.Provider>
+                <Scoreboard></Scoreboard>
                 <OptionForm></OptionForm>
                 <AnswerForm></AnswerForm>
             </Context.Provider>

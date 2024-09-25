@@ -3,7 +3,9 @@
 @use 'utils/mixins'
 
 .menu
-    @include mixins.flex(flex-end)
+    display: flex
+    justify-content: flex-end
+    align-items: center
     margin-left: auto
 
     @include mixins.media()

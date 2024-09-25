@@ -2,14 +2,20 @@
 import React from 'react'
 
 type ContextType = {
-    bubble: {
+    answerFormStatus: {
         questionNum: number,
         bubbleNum: number,
+        okNum: number,
+        ngNum: number,
+        flagNum: number,
     },
-    setBubble: React.Dispatch<React.SetStateAction<{
-        questionNum: number;
-        bubbleNum: number;
-    }>>
+    setAnswerFormStatus: React.Dispatch<React.SetStateAction<{
+        questionNum: number,
+        bubbleNum: number,
+        okNum: number,
+        ngNum: number,
+        flagNum: number,
+    }>>,
 }
 
 type Props = {
@@ -17,17 +23,20 @@ type Props = {
 }
 
 const Context = React.createContext<ContextType>({
-    bubble: {
+    answerFormStatus: {
         questionNum: 5,
         bubbleNum: 4,
+        okNum: 0,
+        ngNum: 0,
+        flagNum: 0,
     },
-    setBubble: () => {},
+    setAnswerFormStatus: () => {},
 })
 
 const ContextProvider = (props: Props): JSX.Element => {
     const context: ContextType = React.useContext(Context)
-    const [bubble, setBubble] = React.useState(context.bubble)
-    const shareContext = {bubble, setBubble}
+    const [answerFormStatus, setAnswerFormStatus] = React.useState(context.answerFormStatus)
+    const shareContext = {answerFormStatus, setAnswerFormStatus}
 
     return (
         <Context.Provider value={shareContext}>

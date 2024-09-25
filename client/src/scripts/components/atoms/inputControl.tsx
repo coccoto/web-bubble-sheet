@@ -9,13 +9,13 @@ import styles from '@/styles/components/atoms/inputControl.module.sass'
 
 type Props = {
     index: number,
-    label: React.ReactNode,
+    label: string,
     control: JSX.Element
 }
 
 export default (props: Props): JSX.Element  => {
 
-    const getLabel = (): React.ReactNode => {
+    const craftLabel = (): string => {
         return props.label === 'isAlphabet' ? numberToAlphabet(props.index) : props.label
     }
 
@@ -23,8 +23,8 @@ export default (props: Props): JSX.Element  => {
         <div>
             <FormControlLabel
                 control={props.control}
-                label={getLabel()}
-                value={getLabel()}
+                label={craftLabel()}
+                value={craftLabel()}
             ></FormControlLabel>
         </div>
     )

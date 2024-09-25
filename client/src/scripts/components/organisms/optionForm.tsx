@@ -6,7 +6,7 @@ import Button from '@/scripts/components/atoms/button'
 // contexts
 import Context from '@/scripts/contexts/context'
 // styles
-import styles from '@/styles/components/molecules/optionForm.module.sass'
+import styles from '@/styles/components/organisms/optionForm.module.sass'
 
 export default (): JSX.Element  => {
 
@@ -21,9 +21,12 @@ export default (): JSX.Element  => {
         if (refInputText[0].current === null || refInputText[1].current === null) {
             throw new Error()
         }
-        context.setBubble({
+        context.setAnswerFormStatus({
             questionNum: Number(refInputText[0].current.value),
             bubbleNum: Number(refInputText[1].current.value),
+            okNum: 0,
+            ngNum: 0,
+            flagNum: 0,
         })
     }
 
@@ -34,12 +37,12 @@ export default (): JSX.Element  => {
                     <InputNumber
                         ref={refInputText[0]}
                         label={'QUESTIONS'}
-                        defaultValue={String(context.bubble.questionNum)}
+                        defaultValue={String(context.answerFormStatus.questionNum)}
                     ></InputNumber>
                     <InputNumber
                         ref={refInputText[1]}
                         label={'BUBBLES'}
-                        defaultValue={String(context.bubble.bubbleNum)}
+                        defaultValue={String(context.answerFormStatus.bubbleNum)}
                     ></InputNumber>
                 </div>
                 <div>

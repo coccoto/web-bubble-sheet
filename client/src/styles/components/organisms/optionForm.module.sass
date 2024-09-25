@@ -11,12 +11,16 @@
         height: 15rem
 
 .wrapper
-    @include mixins.grid(center)
+    display: grid
+    justify-content: center
+    align-items: center
     align-content: center
     height: 100%
     gap: 1rem
     padding: 0 1rem
 
 .input-wrapper
-    @include mixins.flex(flex-start)
+    display: flex
+    justify-content: flex-start
+    align-items: center
     gap: 1rem
