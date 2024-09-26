@@ -23,6 +23,7 @@ export default (): JSX.Element  => {
             return
         }
         context.setAnswerFormStatus({
+            keyCount: Math.random(),
             questionNum: Number(refInputText[0].current.value),
             bubbleNum: Number(refInputText[1].current.value),
             okNum: 0,

@@ -16,7 +16,10 @@ export default (): JSX.Element => {
             {
                 Array.from({length: context.answerFormStatus.questionNum}, (_, index: number) => {
                     return <AnswerLine
-                        key={index}
+                        // key の index に context.answerFormStatus.keyCount を加算している理由
+                        // index だけでは、マークシートの再作成時に key が重複し <AnswerLine> が再レンダリングされない
+                        // この事象を解消するため、index に乱数を加算し key の重複を防いでいる
+                        key={index + context.answerFormStatus.keyCount}
                         index={index}
                         bubbleNum={context.answerFormStatus.bubbleNum}
                     ></AnswerLine>

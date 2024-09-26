@@ -3,6 +3,7 @@ import React from 'react'
 
 type ContextType = {
     answerFormStatus: {
+        keyCount: number,
         questionNum: number,
         bubbleNum: number,
         okNum: number,
@@ -10,6 +11,7 @@ type ContextType = {
         flagNum: number,
     },
     setAnswerFormStatus: React.Dispatch<React.SetStateAction<{
+        keyCount: number,
         questionNum: number,
         bubbleNum: number,
         okNum: number,
@@ -24,6 +26,7 @@ type Props = {
 
 const Context = React.createContext<ContextType>({
     answerFormStatus: {
+        keyCount: 0,
         questionNum: 5,
         bubbleNum: 4,
         okNum: 0,
