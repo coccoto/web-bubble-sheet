@@ -14,7 +14,7 @@ export default (): JSX.Element => {
     return (
         <div className={styles['container']}>
             {
-                Array.from({ length: context.answerFormStatus.questionNum }, (_, index) => {
+                Array.from({length: context.answerFormStatus.questionNum}, (_, index: number) => {
                     return <AnswerLine
                         key={index}
                         index={index}

@@ -19,7 +19,8 @@ export default (): JSX.Element  => {
 
     const handleSubmit = (): void => {
         if (refInputText[0].current === null || refInputText[1].current === null) {
-            throw new Error()
+            console.error('error')
+            return
         }
         context.setAnswerFormStatus({
             questionNum: Number(refInputText[0].current.value),

@@ -15,7 +15,7 @@ type Props = {
 
 export default (props: Props): JSX.Element  => {
 
-    const craftLabel = (): string => {
+    const selectLabel = (): string => {
         return props.label === 'isAlphabet' ? numberToAlphabet(props.index) : props.label
     }
 
@@ -23,8 +23,8 @@ export default (props: Props): JSX.Element  => {
         <div>
             <FormControlLabel
                 control={props.control}
-                label={craftLabel()}
-                value={craftLabel()}
+                label={selectLabel()}
+                value={selectLabel()}
             ></FormControlLabel>
         </div>
     )

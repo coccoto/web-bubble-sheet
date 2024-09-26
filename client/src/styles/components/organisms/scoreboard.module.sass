@@ -3,27 +3,37 @@
 @use 'utils/mixins'
 
 .container
+    position: fixed
+    right: 2.5%
+    width: 10rem
+    padding: 0.5rem 1rem 0 1rem
+    background-color: white
+    border: 1px solid colors.$border-color
+    border-radius: 1rem 1rem 0.25rem 0.25rem
+    font-size: 1.1rem
+    z-index: 10
+    opacity: 0.75
+    transition: bottom 0.5s
+
+    &--open
+        @extend .container
+        bottom: 0
+
+    &--close
+        @extend .container
+        bottom: -6rem
+
+.bar-wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.score-wrapper
     display: flex
     justify-content: center
     flex-direction: column
-    position: fixed
-    bottom: 2.5%
-    right: 2.5%
-    padding: 0.75rem 1rem
-    background-color: white
-    opacity: 0.75
-    border: 1px solid colors.$border-color
-    border-radius: 0.25rem
-    box-shadow: 0rem 0.25rem 0.25rem colors.$box-shadow-color
-    z-index: 10
+    height: 6rem
 
-.wrapper
-    display: grid
-    grid-template-columns: 4rem 1fr
-    gap: 0.5rem
-    font-size: 1.1rem
-
-.score
+.score-items
     display: flex
-    justify-content: flex-end
-    gap: 0.25rem
+    justify-content: space-between

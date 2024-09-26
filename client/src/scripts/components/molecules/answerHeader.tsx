@@ -22,12 +22,12 @@ export default (props: Props): JSX.Element  => {
 
     const [checkedRadio, setCheckedRadio] = React.useState('')
 
-    const incrementLabel = (): string => {
+    const selectLabel = (): string => {
         const index = props.index + 1
         return 'QUESTION ' + String(index)
     }
 
-    const handleOnChangeRadio = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleOnChange_radio = (event: React.ChangeEvent<HTMLInputElement>) => {
         const checkedElem = event.target
 
         // OK が選択された場合
@@ -48,7 +48,6 @@ export default (props: Props): JSX.Element  => {
             } else {
                 console.error('ERROR')
             }
-
         // NG が選択された場合
         } else if (checkedElem.value === 'NG') {
             // 初選択の場合
@@ -67,14 +66,13 @@ export default (props: Props): JSX.Element  => {
             } else {
                 console.error('ERROR')
             }
-
         } else {
             console.error('ERROR')
         }
         setCheckedRadio(checkedElem.value)
     }
 
-    const handleOnChangeCheckbox = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleOnChange_checkbox = (event: React.ChangeEvent<HTMLInputElement>) => {
         const checkedElem = event.target
 
         if (checkedElem.checked) {
@@ -82,7 +80,6 @@ export default (props: Props): JSX.Element  => {
                 ...currentBubble,
                 flagNum: context.answerFormStatus.flagNum + 1,
             }))
-
         } else {
             context.setAnswerFormStatus(currentBubble => ({
                 ...currentBubble,
@@ -94,25 +91,25 @@ export default (props: Props): JSX.Element  => {
     return (
         <div className={styles['container']}>
             <Typography variant={'body1'}>
-                {incrementLabel()}
+                {selectLabel()}
             </Typography>
             <div className={styles['wrapper']}>
                 <RadioGroup row>
                     <InputControl
                         index={0}
                         label={'OK'}
-                        control={<Radio onChange={handleOnChangeRadio} size={'small'} color={'success'}></Radio>}
+                        control={<Radio onChange={handleOnChange_radio} size={'small'} color={'success'}></Radio>}
                     ></InputControl>
                     <InputControl
                         index={0}
                         label={'NG'}
-                        control={<Radio onChange={handleOnChangeRadio} size={'small'} color={'success'}></Radio>}
+                        control={<Radio onChange={handleOnChange_radio} size={'small'} color={'success'}></Radio>}
                     ></InputControl>
                 </RadioGroup>
                 <InputControl
                     index={0}
                     label={'FLAG'}
-                    control={<Checkbox onChange={handleOnChangeCheckbox} size={'small'} color={'warning'}></Checkbox>}
+                    control={<Checkbox onChange={handleOnChange_checkbox} size={'small'} color={'warning'}></Checkbox>}
                 ></InputControl>
             </div>
         </div>

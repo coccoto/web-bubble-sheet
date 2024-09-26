@@ -10,7 +10,7 @@ import styles from '@/styles/components/organisms/answerLine.module.sass'
 
 type Props = {
     bubbleNum: number,
-    index: number
+    index: number,
 }
 
 export default (props: Props): JSX.Element  => {
