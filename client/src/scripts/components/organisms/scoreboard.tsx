@@ -1,11 +1,11 @@
 // react
 import React from 'react'
-// contexts
-import Context from '@/scripts/contexts/context'
 // material
 import IconButton from '@mui/material/IconButton'
 import Add from '@mui/icons-material/Add'
 import Remove from '@mui/icons-material/Remove'
+// contexts
+import Context from '@/scripts/contexts/context'
 // styles
 import styles from '@/styles/components/organisms/scoreboard.module.sass'
 

@@ -15,6 +15,9 @@
     opacity: 0.75
     transition: bottom 0.5s
 
+    @include mixins.media()
+        right: 20%
+
     &--open
         @extend .container
         bottom: 0
