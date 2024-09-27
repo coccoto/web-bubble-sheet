@@ -23,9 +23,9 @@ SERVER_DIR="$SCRIPT_DIR/../server"
 npmInstall "$CLIENT_DIR"
 build "$CLIENT_DIR"
 
-echo 'client complete'
+echo '[INFO] client is complete.'
 
 # server の処理を開始する
 npmInstall "$SERVER_DIR"
 
-echo 'server complete'
+echo '[INFO] server is complete.'

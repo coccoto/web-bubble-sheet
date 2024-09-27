@@ -15,4 +15,4 @@ SERVER_DIR="$SCRIPT_DIR/../server"
 # server の処理を開始する
 runServer "$SERVER_DIR"
 
-echo 'server complete'
+echo '[INFO] server is complete.'
