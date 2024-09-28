@@ -29,7 +29,6 @@ const onError = (error) => {
 const onListening = () => {
     const address = server.address()
     const message = `Local: http://localhost:${address.port}/`
-    console.info(message)
     logger.info(message)
 }
 
