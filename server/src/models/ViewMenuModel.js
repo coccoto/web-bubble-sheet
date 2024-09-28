@@ -6,5 +6,6 @@ module.exports = class {
         this.feature_name = data.feature_name
         this.origin = data.origin
         this.path = data.path
+        this.sort_order = data.sort_order
     }
 }

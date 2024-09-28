@@ -1,7 +1,7 @@
 // react
 import React from 'react'
 // utils
-import fetchApi from '@/scripts/utils/fetchApi'
+import fetchRequest from '@/scripts/utils/fetchRequest'
 // material
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
@@ -18,7 +18,7 @@ export default (): JSX.Element  => {
 
     React.useEffect(() => {
         const postRequest = async () => {
-            const response = await fetchApi<MenuListType>('/api/fetch/menu-list', { method: 'post' })
+            const response = await fetchRequest<MenuListType>('/api/fetch/menu-list', { method: 'post' })
             await setMenuList(response)
         }
         postRequest()

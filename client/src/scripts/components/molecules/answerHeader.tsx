@@ -46,7 +46,7 @@ export default (props: Props): JSX.Element  => {
                     ngNum: context.answerFormStatus.ngNum - 1,
                 }))
             } else {
-                console.error('ERROR')
+                console.error('error')
             }
         // NG が選択された場合
         } else if (checkedElem.value === 'NG') {
@@ -64,10 +64,10 @@ export default (props: Props): JSX.Element  => {
                     ngNum: context.answerFormStatus.ngNum + 1,
                 }))
             } else {
-                console.error('ERROR')
+                console.error('error')
             }
         } else {
-            console.error('ERROR')
+            console.error('error')
         }
         setCheckedRadio(checkedElem.value)
     }

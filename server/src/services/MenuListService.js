@@ -1,5 +1,4 @@
 const ViewMenuModel = require(ROOT + '/server/src/models/ViewMenuModel')
-const ViewMenu = require(ROOT + '/server/src/queries/viewMenu')
 
 module.exports = class {
 
@@ -8,7 +7,8 @@ module.exports = class {
     }
 
     async getViewMenu() {
-        const result = await this.dbManager.select(ViewMenu.selectAll)
+        const query = await this.dbManager.readFile(__dirname + '/../queries/selectMenuList.sql')
+        const result = await this.dbManager.select(query)
         const viewMenuModels = result.map(record => new ViewMenuModel(record))
         return viewMenuModels
     }
