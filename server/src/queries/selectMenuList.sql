@@ -1,5 +1,5 @@
 SELECT
-    main.id
+    main.menu_id
     , mst.app_name
     , mst.feature_name
     , mst.origin
@@ -7,5 +7,5 @@ SELECT
     , main.sort_order
 FROM webbubblesheet.mst_menu AS main
 INNER JOIN global_mst.mst_menu AS mst
-    ON main.global_menu_id = mst.id
+    ON main.global_menu_id = mst.menu_id
 ORDER BY main.sort_order

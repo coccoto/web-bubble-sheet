@@ -1,7 +1,7 @@
 module.exports = class {
 
     constructor(data) {
-        this.id = data.id
+        this.menu_id = data.menu_id
         this.app_name = data.app_name
         this.feature_name = data.feature_name
         this.origin = data.origin
