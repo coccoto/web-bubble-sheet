@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@coccoto/node-dbmanager": "^2.0.0",
-    "@coccoto/node-logmanager": "^2.0.0",
+    "@coccoto/node-dbmanager": "^2.0.2",
+    "@coccoto/node-logmanager": "^2.0.2",
     "dotenv": "^16.4.7",
     "express": "^4.21.2"
   }
