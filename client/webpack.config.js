@@ -82,8 +82,11 @@ const RULES = [
         test: /\.(module)\.(sass)$/,
         use: [
             'style-loader', {
-                loader: 'css-loader?modules',
-                options: {modules: true}
+                loader: 'css-loader',
+                options: {
+                    modules: true,
+                    esModule: false,
+                }
             },{
                 loader: 'postcss-loader',
                 options: {

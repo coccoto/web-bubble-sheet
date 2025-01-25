@@ -10,7 +10,7 @@ import Button from '@mui/material/Button'
 // styles
 import styles from '@/styles/components/templates/header.module.sass'
 
-export default (): JSX.Element  => {
+export default ():React.JSX.Element  => {
 
     const [menuList, setMenuList] = React.useState<MenuListType>({
         result: []
@@ -19,7 +19,11 @@ export default (): JSX.Element  => {
     React.useEffect(() => {
         const postRequest = async () => {
             const response = await fetchRequest<MenuListType>('/api/fetch/menu-list', { method: 'post' })
-            await setMenuList(response)
+            if (response && Array.isArray(response.result)) {
+                setMenuList(response)
+            } else {
+                setMenuList({ result: [] })
+            }
         }
         postRequest()
     }, [])
@@ -30,7 +34,7 @@ export default (): JSX.Element  => {
                 <Typography variant={'h6'}>
                     Web Bubble Sheet
                 </Typography>
-                <div className={styles['menu']}>
+                <div className={styles.menu}>
                     {
                         menuList.result.map((value, index) => {
                             return <Button

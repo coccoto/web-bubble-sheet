@@ -13,7 +13,7 @@ type Props = {
     index: number,
 }
 
-export default (props: Props): JSX.Element  => {
+export default (props: Props): React.JSX.Element  => {
 
     return (
         <div>

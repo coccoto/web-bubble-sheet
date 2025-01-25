@@ -8,7 +8,7 @@ import Context from '@/scripts/contexts/context'
 // styles
 import styles from '@/styles/components/organisms/optionForm.module.sass'
 
-export default (): JSX.Element  => {
+export default ():React.JSX.Element  => {
 
     const context = React.useContext(Context.Context)
 
@@ -33,9 +33,9 @@ export default (): JSX.Element  => {
     }
 
     return (
-        <div className={styles['container']}>
-            <div className={styles['wrapper']}>
-                <div className={styles['input-wrapper']}>
+        <div className={styles.container}>
+            <div className={styles.wrapper}>
+                <div className={styles.inputWrapper}>
                     <InputNumber
                         ref={refInputText[0]}
                         label={'QUESTIONS'}

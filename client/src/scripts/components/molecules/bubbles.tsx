@@ -11,10 +11,10 @@ type Props = {
     bubbleNum: number,
 }
 
-export default (props: Props): JSX.Element  => {
+export default (props: Props): React.JSX.Element  => {
 
     return (
-        <div className={styles['container']}>
+        <div className={styles.container}>
             {
                 Array.from({ length: props.bubbleNum }, (_, index) => {
                     return <InputControl

@@ -10,7 +10,7 @@ type Props = {
     defaultValue: string
 }
 
-export default React.forwardRef((props: Props, ref: React.ForwardedRef<HTMLInputElement>): JSX.Element  => {
+export default React.forwardRef((props: Props, ref: React.ForwardedRef<HTMLInputElement>): React.JSX.Element  => {
 
     return (
         <div>

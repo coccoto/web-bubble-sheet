@@ -36,7 +36,7 @@ const Context = React.createContext<ContextType>({
     setAnswerFormStatus: () => {},
 })
 
-const ContextProvider = (props: Props): JSX.Element => {
+const ContextProvider = (props: Props):React.JSX.Element => {
     const context: ContextType = React.useContext(Context)
     const [answerFormStatus, setAnswerFormStatus] = React.useState(context.answerFormStatus)
     const shareContext = {answerFormStatus, setAnswerFormStatus}

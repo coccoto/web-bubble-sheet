@@ -7,12 +7,12 @@ import Context from '@/scripts/contexts/context'
 // styles
 import styles from '@/styles/components/organisms/answerForm.module.sass'
 
-export default (): JSX.Element => {
+export default (): React.JSX.Element => {
 
     const context = React.useContext(Context.Context)
 
     return (
-        <div className={styles['container']}>
+        <div className={styles.container}>
             {
                 Array.from({length: context.answerFormStatus.questionNum}, (_, index: number) => {
                     return <AnswerLine

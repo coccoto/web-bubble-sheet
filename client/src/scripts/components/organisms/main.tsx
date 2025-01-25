@@ -12,7 +12,7 @@ import styles from '@/styles/components/organisms/main.module.sass'
 export default () => {
 
     return (
-        <div className={styles['container']}>
+        <div className={styles.container}>
             <Context.Provider>
                 <Scoreboard></Scoreboard>
                 <OptionForm></OptionForm>

@@ -10,10 +10,10 @@ import styles from '@/styles/components/atoms/inputControl.module.sass'
 type Props = {
     index: number,
     label: string,
-    control: JSX.Element
+    control:React.JSX.Element
 }
 
-export default (props: Props): JSX.Element  => {
+export default (props: Props): React.JSX.Element  => {
 
     const selectLabel = (): string => {
         return props.label === 'isAlphabet' ? numberToAlphabet(props.index) : props.label

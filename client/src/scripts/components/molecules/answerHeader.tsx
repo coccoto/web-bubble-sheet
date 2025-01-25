@@ -16,7 +16,7 @@ type Props = {
     index: number
 }
 
-export default (props: Props): JSX.Element  => {
+export default (props: Props): React.JSX.Element  => {
 
     const context = React.useContext(Context.Context)
 
@@ -89,11 +89,11 @@ export default (props: Props): JSX.Element  => {
     }
 
     return (
-        <div className={styles['container']}>
+        <div className={styles.container}>
             <Typography variant={'body1'}>
                 {selectLabel()}
             </Typography>
-            <div className={styles['wrapper']}>
+            <div className={styles.wrapper}>
                 <RadioGroup row>
                     <InputControl
                         index={0}
