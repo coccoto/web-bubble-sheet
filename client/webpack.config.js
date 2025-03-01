@@ -2,7 +2,7 @@ const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 
 const DEVELOP_URL = 'http://localhost:10830/'
-const PRODUCT_URL = 'https://webbubblesheet.coccoto.com/'
+const PRODUCT_URL = 'https://web-bubble-sheet.coccoto.com/'
 
 const SOURCE = path.resolve(__dirname, 'src')
 const OUTPUT = path.resolve(__dirname, 'dist')
