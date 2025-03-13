@@ -19,13 +19,13 @@ CLIENT_DIR="$SCRIPT_DIR/../client"
 # server ディレクトリをセットする
 SERVER_DIR="$SCRIPT_DIR/../server"
 
-# client の処理を開始する
+# アプリケーションをセットアップする
 npmInstall "$CLIENT_DIR"
 build "$CLIENT_DIR"
 
 echo '[INFO] client is complete.'
 
-# server の処理を開始する
+# アプリケーションをセットアップする
 npmInstall "$SERVER_DIR"
 
 echo '[INFO] server is complete.'

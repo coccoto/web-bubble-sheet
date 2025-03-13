@@ -12,7 +12,5 @@ SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 # server ディレクトリをセットする
 SERVER_DIR="$SCRIPT_DIR/../server"
 
-# server の処理を開始する
+# サーバーを実行する
 runServer "$SERVER_DIR"
-
-echo '[INFO] server is complete.'
