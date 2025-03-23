@@ -13,7 +13,7 @@ const { logger } = require('@coccoto/node-logmanager')
 const app = require(ROOT + '/server/app.js')
 
 // Configure port
-const PORT = 18030
+const PORT = 18020
 app.set('port', PORT)
 
 // Create HTTP server
