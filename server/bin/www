@@ -9,7 +9,7 @@ global.ROOT = path.resolve(__dirname, '..', '..')
 const dotenv = require('dotenv')
 dotenv.config()
 
-const { logger } = require('@coccoto/node-logmanager')
+const { logger } = require(ROOT + '/server/lib/logger.js')
 const app = require(ROOT + '/server/app.js')
 
 // Configure port
