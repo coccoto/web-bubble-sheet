@@ -1,4 +1,4 @@
 export enum Grading {
-    PASS = 'PASS',
-    FAIL = 'FAIL',
+    PASS = '正解',
+    FAIL = '不正解',
 }

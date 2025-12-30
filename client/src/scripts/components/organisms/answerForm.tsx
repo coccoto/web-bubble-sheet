@@ -19,7 +19,7 @@ export default (): React.JSX.Element => {
         <div className={styles.container}>
             <Card className={styles.card} variant={'outlined'}>
                 <CardContent className={styles.cardContent}>
-                    <Typography variant={'h6'} color={'primary'} sx={{ fontWeight: 'bold' }}>ANSWER QUESTIONS</Typography>
+                    <Typography variant={'h6'} color={'primary'} sx={{ fontWeight: 'bold' }}>回答</Typography>
                     {
                         Array.from({length: context.answerFormStatus.questionNum}, (_, index: number) => {
                             return <AnswerLine

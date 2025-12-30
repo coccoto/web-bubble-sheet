@@ -101,7 +101,7 @@ export default (props: Props): React.JSX.Element  => {
                 )}
                 <InputControl
                     index={0}
-                    label={'REVIEW'}
+                    label={'後で見直す'}
                     control={<Checkbox onChange={handleReviewChange} size={'small'} color={'secondary'}></Checkbox>}
                 ></InputControl>
             </div>

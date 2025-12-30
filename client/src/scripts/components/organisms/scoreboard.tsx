@@ -27,7 +27,7 @@ export default (props: Props):React.JSX.Element  => {
                 </div>
                 <div className={styles.scoreItem}>
                     <div className={styles.scoreNum}>{context.answerFormStatus.reviewNum}/{context.answerFormStatus.questionNum}</div>
-                    <div>REVIEW</div>
+                    <div>後で見直す</div>
                 </div>
             </div>
         </div>

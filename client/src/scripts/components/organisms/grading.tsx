@@ -32,10 +32,10 @@ export default ():React.JSX.Element  => {
         <div className={styles.container}>
             <Card className={styles.card} variant={'outlined'}>
                 <CardContent className={styles.cardContent}>
-                    <Typography variant={'h6'} color={'primary'} sx={{ fontWeight: 'bold' }}>GRADING MODE</Typography>
+                    <Typography variant={'h6'} color={'primary'} sx={{ fontWeight: 'bold' }}>採点</Typography>
                     <div className={styles.buttonWrapper}>
                         <Button handleSubmit={handleSubmit}>
-                            {gradingMode ? 'END GRADING' : 'START GRADING'}
+                            {gradingMode ? '採点を終了' : '採点を開始'}
                         </Button>
                     </div>
                 </CardContent>

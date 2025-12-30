@@ -40,22 +40,22 @@ export default ():React.JSX.Element  => {
         <div className={styles.container}>
             <Card className={styles.card} variant={'outlined'}>
                 <CardContent className={styles.cardContent}>
-                    <Typography variant={'h6'} color={'primary'} sx={{ fontWeight: 'bold' }}>CREATE SHEET</Typography>
+                    <Typography variant={'h6'} color={'primary'} sx={{ fontWeight: 'bold' }}>設定</Typography>
                     <div className={styles.inputWrapper}>
                         <InputNumber
                             ref={refInputText[0]}
-                            label={'QUESTIONS'}
+                            label={'問題数'}
                             defaultValue={String(context.answerFormStatus.questionNum)}
                         ></InputNumber>
                         <InputNumber
                             ref={refInputText[1]}
-                            label={'CHOICES'}
+                            label={'選択肢数'}
                             defaultValue={String(context.answerFormStatus.bubbleNum)}
                         ></InputNumber>
                     </div>
                     <div className={styles.buttonWrapper}>
                         <Button handleSubmit={handleSubmit}>
-                            GENERATE
+                            シートを作成
                         </Button>
                     </div>
                 </CardContent>
