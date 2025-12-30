@@ -1,13 +1,9 @@
 const { dbManager } = require('../../lib/database')
 
-/**
- * Database connection middleware
- * Manages DB connection lifecycle for each request
- */
 const databaseMiddleware = async (req, _res, next) => {
     try {
         await dbManager.connect()
-        req.db = dbManager
+        req.database = dbManager
         next()
     } catch (error) {
         next(error)
