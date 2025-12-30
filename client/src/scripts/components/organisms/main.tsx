@@ -14,8 +14,8 @@ export default () => {
     return (
         <div className={styles.container}>
             <Context.Provider>
-                <Scoreboard></Scoreboard>
                 <OptionForm></OptionForm>
+                <Scoreboard></Scoreboard>
                 <AnswerForm></AnswerForm>
             </Context.Provider>
         </div>

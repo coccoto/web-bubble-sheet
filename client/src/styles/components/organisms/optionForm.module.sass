@@ -3,21 +3,19 @@
 @use '@/styles/utils/mixins'
 
 .container
-    height: 13em
-    border-bottom: 1px solid colors.$border-color
-    box-shadow: 0rem 0.25rem 0.25rem colors.$box-shadow-color
-
-    @include mixins.media()
-        height: 15rem
-
-.wrapper
-    display: grid
+    display: flex
     justify-content: center
     align-items: center
-    align-content: center
-    height: 100%
+    padding: 2.5rem 0
+    border-bottom: 1px solid colors.$border-color
+
+.wrapper
+    max-width: 40rem
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
     gap: 1rem
-    padding: 0 1rem
 
 .input-wrapper
     display: flex
