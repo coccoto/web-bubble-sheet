@@ -1,17 +1,7 @@
 const { initLogger, getLogger } = require('@coccoto/node-logmanager')
+const config = require('../config')
 
-const requiredEnv = ['LOG_DIR', 'ENVIRONMENT']
-
-for (const key of requiredEnv) {
-    if (! process.env[key]) {
-        throw new Error('The .env file is not configured.')
-    }
-}
-
-initLogger({
-    environment: process.env.ENVIRONMENT,
-    logDir: process.env.LOG_DIR,
-})
-
+initLogger(config.log)
 const logger = getLogger()
+
 module.exports = { logger }

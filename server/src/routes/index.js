@@ -1,10 +1,12 @@
-const { logger } = require('@coccoto/node-logmanager')
+const path = require('path')
+const { logger } = require('../../lib/logger')
 const MenuListController = require('../controllers/MenuListController')
 
 module.exports = (app) => {
 
-    app.route(['/']).get((req, res) => {
-        res.sendFile(ROOT + '/client/dist/index.html')
+    app.route(['/']).get((_req, res) => {
+        const indexPath = path.join(__dirname, '..', '..', '..', 'client', 'dist', 'index.html')
+        res.sendFile(indexPath)
     })
 
     app.route(['/api/menu-list']).post(async (req, res) => {

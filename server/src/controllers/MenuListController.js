@@ -1,5 +1,5 @@
-const MenuListService = require(ROOT + '/server/src/services/MenuListService')
-const { dbManager } = require(ROOT + '/server/lib/dbManager.js')
+const MenuListService = require('../services/MenuListService')
+const { dbManager } = require('../../lib/database')
 
 module.exports = class {
 
@@ -9,16 +9,11 @@ module.exports = class {
     }
 
     async main() {
+        await dbManager.connect()
         try {
-            await dbManager.connect()
-
             const menuListService = new MenuListService(dbManager)
             const result = await menuListService.getViewMenu()
-            return this.res.json({ result: result })
-
-        } catch (error) {
-            throw error
-
+            return this.res.json({ result })
         } finally {
             await dbManager.disconnect()
         }

@@ -1,20 +1,11 @@
 #!/usr/bin/env node
 
-const path = require('path')
-
-// Set the global ROOT variable
-global.ROOT = path.resolve(__dirname, '..', '..')
-
-// Set process.env
-const dotenv = require('dotenv')
-dotenv.config()
-
-const { logger } = require(ROOT + '/server/lib/logger.js')
-const app = require(ROOT + '/server/app.js')
+const { logger } = require('../lib/logger')
+const config = require('../config')
+const app = require('../app')
 
 // Configure port
-const PORT = 18020
-app.set('port', PORT)
+app.set('port', config.server.port)
 
 // Create HTTP server
 const http = require('http')
