@@ -3,7 +3,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 // organisms
 import AnswerForm from '@/scripts/components/organisms/answerForm'
-import OptionForm from '@/scripts/components/organisms/optionForm'
+import Dashboard from '@/scripts/components/organisms/dashboard'
 import Scoreboard from '@/scripts/components/organisms/scoreboard'
 // contexts
 import Context from '@/scripts/contexts/context'
@@ -21,7 +21,7 @@ export default () => {
 
     return (
         <div className={styles.container}>
-            {! context.isGradingMode && <OptionForm></OptionForm>}
+            {! context.isGradingMode && <Dashboard></Dashboard>}
             {context.isGradingMode && <Scoreboard></Scoreboard>}
             <AnswerForm></AnswerForm>
         </div>

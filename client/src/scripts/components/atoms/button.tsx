@@ -20,6 +20,7 @@ export default (props: Props): React.JSX.Element  => {
                 }
             }
             variant='contained'
+            fullWidth
             >{props.children}</Button>
         </div>
     )

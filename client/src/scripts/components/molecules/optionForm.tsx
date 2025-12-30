@@ -1,12 +1,14 @@
 // react
 import React from 'react'
+// material
+import Typography from '@mui/material/Typography'
 // atoms
 import InputNumber from '@/scripts/components/atoms/inputNumber'
 import Button from '@/scripts/components/atoms/button'
 // contexts
 import Context from '@/scripts/contexts/context'
 // styles
-import styles from '@/styles/components/organisms/optionForm.module.sass'
+import styles from '@/styles/components/molecules/optionForm.module.sass'
 
 export default ():React.JSX.Element  => {
 
@@ -34,24 +36,23 @@ export default ():React.JSX.Element  => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.wrapper}>
-                <div className={styles.inputWrapper}>
-                    <InputNumber
-                        ref={refInputText[0]}
-                        label={'QUESTIONS'}
-                        defaultValue={String(context.answerFormStatus.questionNum)}
-                    ></InputNumber>
-                    <InputNumber
-                        ref={refInputText[1]}
-                        label={'CHOICES'}
-                        defaultValue={String(context.answerFormStatus.bubbleNum)}
-                    ></InputNumber>
-                </div>
-                <div>
-                    <Button handleSubmit={handleSubmit}>
-                        GENERATE
-                    </Button>
-                </div>
+            <Typography variant={'h6'} color={'primary'} sx={{ fontWeight: 'bold' }}>マークシート作成</Typography>
+            <div className={styles.inputWrapper}>
+                <InputNumber
+                    ref={refInputText[0]}
+                    label={'QUESTIONS'}
+                    defaultValue={String(context.answerFormStatus.questionNum)}
+                ></InputNumber>
+                <InputNumber
+                    ref={refInputText[1]}
+                    label={'CHOICES'}
+                    defaultValue={String(context.answerFormStatus.bubbleNum)}
+                ></InputNumber>
+            </div>
+            <div className={styles.buttonWrapper}>
+                <Button handleSubmit={handleSubmit}>
+                    GENERATE
+                </Button>
             </div>
         </div>
     )
