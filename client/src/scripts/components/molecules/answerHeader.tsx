@@ -30,38 +30,38 @@ export default (props: Props): React.JSX.Element  => {
     const handleOnChange_radio = (event: React.ChangeEvent<HTMLInputElement>) => {
         const checkedElem = event.target
 
-        // OK が選択された場合
-        if (checkedElem.value === 'OK') {
+        // PASS が選択された場合
+        if (checkedElem.value === 'PASS') {
             // 初選択の場合
             if (checkedRadio === '') {
                 context.setAnswerFormStatus(currentBubble => ({
                     ...currentBubble,
-                    okNum: context.answerFormStatus.okNum + 1,
+                    passNum: context.answerFormStatus.passNum + 1,
                 }))
-            // 前選択が NG の場合
-            } else if (checkedRadio === 'NG') {
+            // 前選択が FAIL の場合
+            } else if (checkedRadio === 'FAIL') {
                 context.setAnswerFormStatus(currentBubble => ({
                     ...currentBubble,
-                    okNum: context.answerFormStatus.okNum + 1,
-                    ngNum: context.answerFormStatus.ngNum - 1,
+                    passNum: context.answerFormStatus.passNum + 1,
+                    failNum: context.answerFormStatus.failNum - 1,
                 }))
             } else {
                 console.error('error')
             }
-        // NG が選択された場合
-        } else if (checkedElem.value === 'NG') {
+        // FAIL が選択された場合
+        } else if (checkedElem.value === 'FAIL') {
             // 初選択の場合
             if (checkedRadio === '') {
                 context.setAnswerFormStatus(currentBubble => ({
                     ...currentBubble,
-                    ngNum: context.answerFormStatus.ngNum + 1,
+                    failNum: context.answerFormStatus.failNum + 1,
                 }))
-            // 前選択が OK の場合
-            } else if (checkedRadio === 'OK') {
+            // 前選択が PASS の場合
+            } else if (checkedRadio === 'PASS') {
                 context.setAnswerFormStatus(currentBubble => ({
                     ...currentBubble,
-                    okNum: context.answerFormStatus.okNum - 1,
-                    ngNum: context.answerFormStatus.ngNum + 1,
+                    passNum: context.answerFormStatus.passNum - 1,
+                    failNum: context.answerFormStatus.failNum + 1,
                 }))
             } else {
                 console.error('error')
@@ -78,12 +78,12 @@ export default (props: Props): React.JSX.Element  => {
         if (checkedElem.checked) {
             context.setAnswerFormStatus(currentBubble => ({
                 ...currentBubble,
-                flagNum: context.answerFormStatus.flagNum + 1,
+                reviewNum: context.answerFormStatus.reviewNum + 1,
             }))
         } else {
             context.setAnswerFormStatus(currentBubble => ({
                 ...currentBubble,
-                flagNum: context.answerFormStatus.flagNum - 1,
+                reviewNum: context.answerFormStatus.reviewNum - 1,
             }))
         }
     }
@@ -103,13 +103,13 @@ export default (props: Props): React.JSX.Element  => {
                     <InputControl
                         index={0}
                         label={'FAIL'}
-                        control={<Radio onChange={handleOnChange_radio} size={'small'} color={'success'}></Radio>}
+                        control={<Radio onChange={handleOnChange_radio} size={'small'} color={'error'}></Radio>}
                     ></InputControl>
                 </RadioGroup>
                 <InputControl
                     index={0}
                     label={'REVIEW'}
-                    control={<Checkbox onChange={handleOnChange_checkbox} size={'small'} color={'warning'}></Checkbox>}
+                    control={<Checkbox onChange={handleOnChange_checkbox} size={'small'} color={'primary'}></Checkbox>}
                 ></InputControl>
             </div>
         </div>

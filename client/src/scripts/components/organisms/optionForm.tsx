@@ -26,9 +26,9 @@ export default ():React.JSX.Element  => {
             keyCount: Math.random(),
             questionNum: Number(refInputText[0].current.value),
             bubbleNum: Number(refInputText[1].current.value),
-            okNum: 0,
-            ngNum: 0,
-            flagNum: 0,
+            passNum: 0,
+            failNum: 0,
+            reviewNum: 0,
         })
     }
 
