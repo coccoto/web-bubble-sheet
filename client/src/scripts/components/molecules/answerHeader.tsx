@@ -1,5 +1,6 @@
 // react
 import React from 'react'
+import { useLocation } from 'react-router-dom'
 // atoms
 import InputControl from '@/scripts/components/atoms/inputControl'
 // material
@@ -9,6 +10,8 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 // contexts
 import Context from '@/scripts/contexts/context'
+// utils
+import { isGradingMode } from '@/scripts/utils/isGradingMode'
 // types
 import { Grading } from '@/types'
 // styles
@@ -21,6 +24,8 @@ type Props = {
 export default (props: Props): React.JSX.Element  => {
 
     const context = React.useContext(Context.Context)
+    const location = useLocation()
+    const gradingMode = isGradingMode(location.pathname)
 
     const [checkedRadio, setCheckedRadio] = React.useState('')
 
@@ -80,7 +85,7 @@ export default (props: Props): React.JSX.Element  => {
                 {selectLabel()}
             </Typography>
             <div className={styles.wrapper}>
-                {context.isGradingMode && (
+                {gradingMode && (
                     <RadioGroup row>
                         <InputControl
                             index={0}
