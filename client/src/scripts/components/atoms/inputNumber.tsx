@@ -13,13 +13,14 @@ type Props = {
 export default React.forwardRef((props: Props, ref: React.ForwardedRef<HTMLInputElement>): React.JSX.Element  => {
 
     return (
-        <div>
+        <div className={styles.container}>
             <TextField
                 type={'number'}
                 size={'small'}
                 inputRef={ref}
                 defaultValue={props.defaultValue}
                 label={props.label}
+                fullWidth
             ></TextField>
         </div>
     )
