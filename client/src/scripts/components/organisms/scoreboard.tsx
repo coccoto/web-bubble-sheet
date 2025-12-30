@@ -16,7 +16,7 @@ export default (props: Props):React.JSX.Element  => {
 
     const context = React.useContext(Context.Context)
 
-    const [isOpen, setIsOpen] = React.useState<boolean>(false)
+    const [isOpen, setIsOpen] = React.useState<boolean>(true)
 
     const handleScoreboard = () => {
         setIsOpen(! isOpen)
