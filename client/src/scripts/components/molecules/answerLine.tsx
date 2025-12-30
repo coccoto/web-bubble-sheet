@@ -8,7 +8,7 @@ import TextField from '@mui/material/TextField'
 // contexts
 import Context from '@/scripts/contexts/context'
 // styles
-import styles from '@/styles/components/organisms/answerLine.module.sass'
+import styles from '@/styles/components/molecules/answerLine.module.sass'
 
 type Props = {
     bubbleNum: number,
@@ -19,7 +19,7 @@ export default (props: Props): React.JSX.Element  => {
     const context = React.useContext(Context.Context)
 
     return (
-        <div>
+        <div className={styles.container}>
             <AnswerHeader
                 index={props.index}
             ></AnswerHeader>
