@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
-const { logger } = require('../lib/logger')
-const config = require('../config')
-const app = require('../app')
+require('module-alias/register')
+
+const { logger } = require('@/lib/logger')
+const config = require('@/config/config')
+const app = require('@/app')
 
 // Configure port
 app.set('port', config.server.port)

@@ -1,6 +1,6 @@
 const path = require('path')
-const { logger } = require('../../lib/logger')
-const MenuListController = require('../controllers/MenuListController')
+const { logger } = require('@/lib/logger')
+const MenuListController = require('@/src/controllers/MenuListController')
 
 module.exports = (app) => {
 

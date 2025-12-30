@@ -1,4 +1,4 @@
-const { dbManager } = require('../../lib/database')
+const { dbManager } = require('@/lib/database')
 
 const databaseMiddleware = async (req, _res, next) => {
     try {

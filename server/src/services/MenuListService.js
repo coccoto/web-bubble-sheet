@@ -1,5 +1,5 @@
 const path = require('path')
-const ViewMenuModel = require('../models/ViewMenuModel')
+const ViewMenuModel = require('@/src/models/ViewMenuModel')
 
 module.exports = class {
 

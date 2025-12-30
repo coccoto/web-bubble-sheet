@@ -1,3 +1,5 @@
+require('module-alias/register')
+
 const Express = require('express')
 const app = Express()
 
@@ -8,11 +10,11 @@ app.use(Express.json())
 app.use(Express.urlencoded({ extended: true }))
 
 // Database middleware
-const { databaseMiddleware } = require('./src/middlewares/databaseMiddleware')
+const { databaseMiddleware } = require('@/src/middlewares/databaseMiddleware')
 app.use('/api', databaseMiddleware)
 
 // Set up routes
-const Router = require('./src/routes')
+const Router = require('@/src/routes')
 Router(app)
 
 module.exports = app

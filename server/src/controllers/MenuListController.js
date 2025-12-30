@@ -1,4 +1,4 @@
-const MenuListService = require('../services/MenuListService')
+const MenuListService = require('@/src/services/MenuListService')
 
 module.exports = class {
 
