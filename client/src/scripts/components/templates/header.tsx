@@ -31,7 +31,7 @@ export default ():React.JSX.Element  => {
     return (
         <AppBar position={'static'}>
             <Toolbar>
-                <Typography variant={'h6'}>
+                <Typography variant={'h6'} sx={{ fontWeight: 'bold' }}>
                     Web Bubble Sheet
                 </Typography>
                 <div className={styles.menu}>
