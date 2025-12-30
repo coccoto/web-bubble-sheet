@@ -25,6 +25,8 @@ export default ():React.JSX.Element  => {
     const gradingMode = isGradingMode(location.pathname)
 
     const handleSubmit = (): void => {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+
         if (gradingMode) {
             setAnswerFormStatus({
                 ...answerFormStatus,
