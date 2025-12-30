@@ -10,8 +10,9 @@ app.use(Express.json())
 app.use(Express.urlencoded({ extended: true }))
 
 // Database middleware
-const { databaseMiddleware } = require('@/src/middlewares/databaseMiddleware')
+const { databaseMiddleware, databaseCleanupMiddleware } = require('@/src/middlewares/databaseMiddleware')
 app.use('/api', databaseMiddleware)
+app.use('/api', databaseCleanupMiddleware)
 
 // Set up routes
 const Router = require('@/src/routes')
