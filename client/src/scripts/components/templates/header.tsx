@@ -1,5 +1,6 @@
 // react
 import React from 'react'
+import { Link } from 'react-router-dom'
 // lib
 import fetchRequest from '@/scripts/lib/fetchRequest'
 // material
@@ -9,6 +10,8 @@ import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
 // types
 import { MenuListType } from '@/types'
+// constants
+import { ROUTES } from '@/constants'
 // styles
 import styles from '@/styles/components/templates/header.module.sass'
 
@@ -33,14 +36,20 @@ export default ():React.JSX.Element  => {
     return (
         <AppBar position={'static'}>
             <Toolbar>
-                <Typography variant={'h6'} sx={{ fontWeight: 'bold' }}>
+                <Typography
+                    className={styles.header}
+                    variant={'h6'}
+                    sx={{ fontWeight: 'bold', cursor: 'pointer' }}
+                    component={Link}
+                    to={ROUTES.INDEX}
+                >
                     Web Bubble Sheet
                 </Typography>
                 <div className={styles.menu}>
                     {
                         menuList.result.map((value, index) => {
                             return <Button
-                                sx={{ color: 'white' }}    
+                                sx={{ color: 'white' }}
                                 key={value['id']}
                                 href={value['origin'] + value['path']}
                             >{value['app_name']}</Button>
