@@ -20,7 +20,7 @@ export default ():React.JSX.Element  => {
         <div className={styles.container}>
             <Card className={styles.card} variant={'outlined'}>
                 <CardContent className={styles.cardContent}>
-                    <Typography variant={'h6'} color={'primary'} sx={{ fontWeight: 'bold' }}>採点モード</Typography>
+                    <Typography variant={'h6'} color={'primary'} sx={{ fontWeight: 'bold' }}>GRADE ANSWERS</Typography>
                     <div className={styles.buttonWrapper}>
                         <Button handleSubmit={handleSubmit}>
                             GRADING
