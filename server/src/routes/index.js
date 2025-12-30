@@ -15,7 +15,7 @@ module.exports = (app) => {
             await menuListController.main()
         } catch (error) {
             logger.error(`Error in ${req.url}: ${error.message}`)
-            if (!res.headersSent) {
+            if (! res.headersSent) {
                 res.status(500).json({ error: 'Internal Server Error' })
             }
         }
