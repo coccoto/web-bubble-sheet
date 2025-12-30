@@ -102,7 +102,7 @@ export default (props: Props): React.JSX.Element  => {
                 <InputControl
                     index={0}
                     label={'後で見直す'}
-                    control={<Checkbox onChange={handleReviewChange} size={'small'} color={'secondary'}></Checkbox>}
+                    control={<Checkbox onChange={handleReviewChange} size={'small'} color={'info'}></Checkbox>}
                 ></InputControl>
             </div>
         </div>
