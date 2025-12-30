@@ -21,7 +21,7 @@ export default (props: Props): React.JSX.Element  => {
                         key={index}
                         index={index}
                         label={'isAlphabet'}
-                        control={<Checkbox size={'small'}></Checkbox>}
+                        control={<Checkbox size={'medium'}></Checkbox>}
                     ></InputControl>
                 })
             }

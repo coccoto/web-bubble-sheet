@@ -109,7 +109,7 @@ export default (props: Props): React.JSX.Element  => {
                 <InputControl
                     index={0}
                     label={'REVIEW'}
-                    control={<Checkbox onChange={handleOnChange_checkbox} size={'small'} color={'primary'}></Checkbox>}
+                    control={<Checkbox onChange={handleOnChange_checkbox} size={'small'} color={'secondary'}></Checkbox>}
                 ></InputControl>
             </div>
         </div>
