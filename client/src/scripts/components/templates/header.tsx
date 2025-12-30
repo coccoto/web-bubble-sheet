@@ -7,6 +7,8 @@ import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Button from '@mui/material/Button'
+// types
+import { MenuListType } from '@/types'
 // styles
 import styles from '@/styles/components/templates/header.module.sass'
 
