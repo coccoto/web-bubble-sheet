@@ -90,25 +90,25 @@ export default (props: Props): React.JSX.Element  => {
 
     return (
         <div className={styles.container}>
-            <Typography variant={'body1'}>
+            <Typography variant={'body1'} sx={{ fontWeight: 'bold' }}>
                 {selectLabel()}
             </Typography>
             <div className={styles.wrapper}>
                 <RadioGroup row>
                     <InputControl
                         index={0}
-                        label={'OK'}
+                        label={'PASS'}
                         control={<Radio onChange={handleOnChange_radio} size={'small'} color={'success'}></Radio>}
                     ></InputControl>
                     <InputControl
                         index={0}
-                        label={'NG'}
+                        label={'FAIL'}
                         control={<Radio onChange={handleOnChange_radio} size={'small'} color={'success'}></Radio>}
                     ></InputControl>
                 </RadioGroup>
                 <InputControl
                     index={0}
-                    label={'FLAG'}
+                    label={'REVIEW'}
                     control={<Checkbox onChange={handleOnChange_checkbox} size={'small'} color={'warning'}></Checkbox>}
                 ></InputControl>
             </div>

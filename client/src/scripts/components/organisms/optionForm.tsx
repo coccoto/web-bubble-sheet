@@ -43,13 +43,13 @@ export default ():React.JSX.Element  => {
                     ></InputNumber>
                     <InputNumber
                         ref={refInputText[1]}
-                        label={'BUBBLES'}
+                        label={'CHOICES'}
                         defaultValue={String(context.answerFormStatus.bubbleNum)}
                     ></InputNumber>
                 </div>
                 <div>
                     <Button handleSubmit={handleSubmit}>
-                        CREATE
+                        GENERATE
                     </Button>
                 </div>
             </div>
