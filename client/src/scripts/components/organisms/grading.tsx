@@ -11,17 +11,26 @@ import Button from '@/scripts/components/atoms/button'
 import { isGradingMode } from '@/scripts/utils/isGradingMode'
 // constants
 import { ROUTES } from '@/constants'
+// contexts
+import context from '@/scripts/contexts/context'
 // styles
 import styles from '@/styles/components/organisms/grading.module.sass'
 
 export default ():React.JSX.Element  => {
+    const { answerFormStatus, setAnswerFormStatus } = React.useContext(context.Context)
 
     const navigate = useNavigate()
+
     const location = useLocation()
     const gradingMode = isGradingMode(location.pathname)
 
     const handleSubmit = (): void => {
         if (gradingMode) {
+            setAnswerFormStatus({
+                ...answerFormStatus,
+                passNum: 0,
+                failNum: 0,
+            })
             navigate(ROUTES.INDEX)
         } else {
             navigate(ROUTES.GRADING)
