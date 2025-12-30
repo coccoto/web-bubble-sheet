@@ -3,9 +3,7 @@
 @use '@/styles/utils/mixins'
 
 .container
-
-    & > div:nth-child(n + 3)
-        margin-top: 2rem
-
-    & > div:last-child
-        margin-bottom: 4rem
+    display: flex
+    flex-direction: column
+    gap: 2rem
+    margin-bottom: 4rem

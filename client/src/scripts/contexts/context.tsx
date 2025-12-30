@@ -18,6 +18,8 @@ type ContextType = {
         failNum: number,
         reviewNum: number,
     }>>,
+    isGradingMode: boolean,
+    setIsGradingMode: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
 type Props = {
@@ -34,12 +36,15 @@ const Context = React.createContext<ContextType>({
         reviewNum: 0,
     },
     setAnswerFormStatus: () => {},
+    isGradingMode: false,
+    setIsGradingMode: () => {},
 })
 
 const ContextProvider = (props: Props):React.JSX.Element => {
     const context: ContextType = React.useContext(Context)
     const [answerFormStatus, setAnswerFormStatus] = React.useState(context.answerFormStatus)
-    const shareContext = {answerFormStatus, setAnswerFormStatus}
+    const [isGradingMode, setIsGradingMode] = React.useState(context.isGradingMode)
+    const shareContext = {answerFormStatus, setAnswerFormStatus, isGradingMode, setIsGradingMode}
 
     return (
         <Context.Provider value={shareContext}>

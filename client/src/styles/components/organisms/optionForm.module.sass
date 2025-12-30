@@ -3,11 +3,16 @@
 @use '@/styles/utils/mixins'
 
 .container
+    position: sticky
+    top: 0
+    z-index: 10
+    background-color: white
     display: flex
     justify-content: center
     align-items: center
-    padding: 2.5rem 1rem
     border-bottom: 1px solid colors.$border-color
+    height: 6rem
+    box-shadow: 0rem 0.25rem 0.25rem colors.$box-shadow-color
 
 .wrapper
     max-width: 40rem

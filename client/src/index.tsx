@@ -1,7 +1,10 @@
 import React from 'react'
 import ReactDom from 'react-dom/client';
-import App from '@/scripts/index'
+import { BrowserRouter } from 'react-router-dom'
+import App from '@/scripts/app'
 import theme from '@/scripts/theme'
+// contexts
+import Context from '@/scripts/contexts/context'
 // material
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider } from '@mui/material/styles'
@@ -15,6 +18,10 @@ const root = ReactDom.createRoot(elementApp);
 root.render(
     <ThemeProvider theme={theme}>
         <CssBaseline></CssBaseline>
-        <App></App>
+        <BrowserRouter>
+            <Context.Provider>
+                <App></App>
+            </Context.Provider>
+        </BrowserRouter>
     </ThemeProvider>
 )

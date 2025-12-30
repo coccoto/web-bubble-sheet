@@ -4,6 +4,8 @@ import React from 'react'
 import InputControl from '@/scripts/components/atoms/inputControl'
 // material
 import Checkbox from '@mui/material/Checkbox'
+// contexts
+import Context from '@/scripts/contexts/context'
 // styles
 import styles from '@/styles/components/molecules/bubbles.module.sass'
 
@@ -12,6 +14,7 @@ type Props = {
 }
 
 export default (props: Props): React.JSX.Element  => {
+    const context = React.useContext(Context.Context)
 
     return (
         <div className={styles.container}>
@@ -21,7 +24,7 @@ export default (props: Props): React.JSX.Element  => {
                         key={index}
                         index={index}
                         label={'isAlphabet'}
-                        control={<Checkbox size={'medium'}></Checkbox>}
+                        control={<Checkbox size={'medium'} disabled={context.isGradingMode}></Checkbox>}
                     ></InputControl>
                 })
             }

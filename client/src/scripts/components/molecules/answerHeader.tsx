@@ -94,18 +94,20 @@ export default (props: Props): React.JSX.Element  => {
                 {selectLabel()}
             </Typography>
             <div className={styles.wrapper}>
-                <RadioGroup row>
-                    <InputControl
-                        index={0}
-                        label={'PASS'}
-                        control={<Radio onChange={handleOnChange_radio} size={'small'} color={'success'}></Radio>}
-                    ></InputControl>
-                    <InputControl
-                        index={0}
-                        label={'FAIL'}
-                        control={<Radio onChange={handleOnChange_radio} size={'small'} color={'error'}></Radio>}
-                    ></InputControl>
-                </RadioGroup>
+                {context.isGradingMode && (
+                    <RadioGroup row>
+                        <InputControl
+                            index={0}
+                            label={'PASS'}
+                            control={<Radio onChange={handleOnChange_radio} size={'small'} color={'success'}></Radio>}
+                        ></InputControl>
+                        <InputControl
+                            index={0}
+                            label={'FAIL'}
+                            control={<Radio onChange={handleOnChange_radio} size={'small'} color={'error'}></Radio>}
+                        ></InputControl>
+                    </RadioGroup>
+                )}
                 <InputControl
                     index={0}
                     label={'REVIEW'}

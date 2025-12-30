@@ -1,19 +1,25 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 // organisms
 import Main from '@/scripts/components/organisms/main'
 // templates
 import Header from '@/scripts/components/templates/header'
 import Footer from '@/scripts/components/templates/footer'
-// styles
-import styles from '@/styles/index.module.sass'
 
 export default () => {
 
-    return (
+    const appLayout = (
         <div>
             <Header></Header>
             <Main></Main>
             <Footer></Footer>
         </div>
+    )
+
+    return (
+        <Routes>
+            <Route path="/" element={appLayout}></Route>
+            <Route path="/grading" element={appLayout}></Route>
+        </Routes>
     )
 }
