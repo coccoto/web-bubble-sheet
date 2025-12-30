@@ -26,6 +26,13 @@ export default ():React.JSX.Element  => {
             console.error('error')
             return
         }
+        const isConfirm = window.confirm(
+            '現在の回答がリセットされます。シートの作成を続行しますか？'
+        )
+        if (! isConfirm) {
+            return
+        }
+
         context.setAnswerFormStatus({
             keyCount: Math.random(),
             questionNum: Number(refInputText[0].current.value),
