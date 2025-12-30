@@ -9,6 +9,8 @@ import CardContent from '@mui/material/CardContent'
 import Button from '@/scripts/components/atoms/button'
 // contexts
 import Context from '@/scripts/contexts/context'
+// constants
+import { ROUTES } from '@/constants'
 // styles
 import styles from '@/styles/components/organisms/grading.module.sass'
 
@@ -17,7 +19,7 @@ export default ():React.JSX.Element  => {
     const navigate = useNavigate()
 
     const handleSubmit = (): void => {
-        navigate('/grading')
+        navigate(ROUTES.GRADING)
     }
 
     return (

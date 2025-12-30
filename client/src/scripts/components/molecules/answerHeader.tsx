@@ -9,6 +9,8 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 // contexts
 import Context from '@/scripts/contexts/context'
+// types
+import { Grading } from '@/types'
 // styles
 import styles from '@/styles/components/molecules/answerHeader.module.sass'
 
@@ -27,52 +29,36 @@ export default (props: Props): React.JSX.Element  => {
         return 'QUESTION ' + String(index)
     }
 
-    const handleOnChange_radio = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const checkedElem = event.target
+    const handleGradingChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const newValue = event.target.value as Grading
 
-        // PASS が選択された場合
-        if (checkedElem.value === 'PASS') {
-            // 初選択の場合
-            if (checkedRadio === '') {
-                context.setAnswerFormStatus(currentBubble => ({
-                    ...currentBubble,
-                    passNum: context.answerFormStatus.passNum + 1,
-                }))
-            // 前選択が FAIL の場合
-            } else if (checkedRadio === 'FAIL') {
-                context.setAnswerFormStatus(currentBubble => ({
-                    ...currentBubble,
-                    passNum: context.answerFormStatus.passNum + 1,
-                    failNum: context.answerFormStatus.failNum - 1,
-                }))
-            } else {
-                console.error('error')
+        // 前回の選択と同じ場合、処理を終了
+        if (checkedRadio === newValue) return
+
+        context.setAnswerFormStatus(current => {
+            let passNum = current.passNum
+            let failNum = current.failNum
+
+            // 前回の選択を解除
+            if (checkedRadio === Grading.PASS) {
+                passNum -= 1
+            } else if (checkedRadio === Grading.FAIL) {
+                failNum -= 1
             }
-        // FAIL が選択された場合
-        } else if (checkedElem.value === 'FAIL') {
-            // 初選択の場合
-            if (checkedRadio === '') {
-                context.setAnswerFormStatus(currentBubble => ({
-                    ...currentBubble,
-                    failNum: context.answerFormStatus.failNum + 1,
-                }))
-            // 前選択が PASS の場合
-            } else if (checkedRadio === 'PASS') {
-                context.setAnswerFormStatus(currentBubble => ({
-                    ...currentBubble,
-                    passNum: context.answerFormStatus.passNum - 1,
-                    failNum: context.answerFormStatus.failNum + 1,
-                }))
-            } else {
-                console.error('error')
+
+            // 今回の選択を追加
+            if (newValue === Grading.PASS) {
+                passNum += 1
+            } else if (newValue === Grading.FAIL) {
+                failNum += 1
             }
-        } else {
-            console.error('error')
-        }
-        setCheckedRadio(checkedElem.value)
+
+            return { ...current, passNum, failNum }
+        })
+        setCheckedRadio(newValue)
     }
 
-    const handleOnChange_checkbox = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const handleReviewChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const checkedElem = event.target
 
         if (checkedElem.checked) {
@@ -98,20 +84,20 @@ export default (props: Props): React.JSX.Element  => {
                     <RadioGroup row>
                         <InputControl
                             index={0}
-                            label={'PASS'}
-                            control={<Radio onChange={handleOnChange_radio} size={'small'} color={'success'}></Radio>}
+                            label={Grading.PASS}
+                            control={<Radio value={Grading.PASS} onChange={handleGradingChange} size={'small'} color={'success'}></Radio>}
                         ></InputControl>
                         <InputControl
                             index={0}
-                            label={'FAIL'}
-                            control={<Radio onChange={handleOnChange_radio} size={'small'} color={'error'}></Radio>}
+                            label={Grading.FAIL}
+                            control={<Radio value={Grading.FAIL} onChange={handleGradingChange} size={'small'} color={'error'}></Radio>}
                         ></InputControl>
                     </RadioGroup>
                 )}
                 <InputControl
                     index={0}
                     label={'REVIEW'}
-                    control={<Checkbox onChange={handleOnChange_checkbox} size={'small'} color={'secondary'}></Checkbox>}
+                    control={<Checkbox onChange={handleReviewChange} size={'small'} color={'secondary'}></Checkbox>}
                 ></InputControl>
             </div>
         </div>

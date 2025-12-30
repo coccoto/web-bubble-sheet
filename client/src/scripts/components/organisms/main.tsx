@@ -8,6 +8,8 @@ import Scoreboard from '@/scripts/components/organisms/scoreboard'
 import Grading from '@/scripts/components/organisms/grading'
 // contexts
 import Context from '@/scripts/contexts/context'
+// constants
+import { ROUTES } from '@/constants'
 // styles
 import styles from '@/styles/components/organisms/main.module.sass'
 
@@ -16,7 +18,7 @@ export default () => {
     const context = React.useContext(Context.Context)
 
     React.useEffect(() => {
-        const isGrading = location.pathname === '/grading'
+        const isGrading = location.pathname === ROUTES.GRADING
         context.setIsGradingMode(isGrading)
     }, [location.pathname])
 

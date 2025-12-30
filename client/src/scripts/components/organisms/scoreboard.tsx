@@ -2,6 +2,8 @@
 import React from 'react'
 // contexts
 import Context from '@/scripts/contexts/context'
+// types
+import { Grading } from '@/types'
 // styles
 import styles from '@/styles/components/organisms/scoreboard.module.sass'
 
@@ -17,11 +19,11 @@ export default (props: Props):React.JSX.Element  => {
             <div className={styles.wrapper}>
                 <div className={styles.scoreItem}>
                     <div className={styles.scoreNum}>{context.answerFormStatus.passNum}/{context.answerFormStatus.questionNum}</div>
-                    <div>PASS</div>
+                    <div>{Grading.PASS}</div>
                 </div>
                 <div className={styles.scoreItem}>
                     <div className={styles.scoreNum}>{context.answerFormStatus.failNum}/{context.answerFormStatus.questionNum}</div>
-                    <div>FAIL</div>
+                    <div>{Grading.FAIL}</div>
                 </div>
                 <div className={styles.scoreItem}>
                     <div className={styles.scoreNum}>{context.answerFormStatus.reviewNum}/{context.answerFormStatus.questionNum}</div>
