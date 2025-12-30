@@ -5,6 +5,8 @@ import AnswerHeader from '@/scripts/components/molecules/answerHeader'
 import Bubbles from '@/scripts/components/molecules/bubbles'
 // material
 import TextField from '@mui/material/TextField'
+// contexts
+import Context from '@/scripts/contexts/context'
 // styles
 import styles from '@/styles/components/organisms/answerLine.module.sass'
 
@@ -14,6 +16,7 @@ type Props = {
 }
 
 export default (props: Props): React.JSX.Element  => {
+    const context = React.useContext(Context.Context)
 
     return (
         <div>
@@ -26,6 +29,7 @@ export default (props: Props): React.JSX.Element  => {
             <TextField
                 size={'small'}
                 fullWidth
+                disabled={context.isGradingMode}
             ></TextField>
         </div>
     )
