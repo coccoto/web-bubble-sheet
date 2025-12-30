@@ -32,6 +32,7 @@ export default (props: Props): React.JSX.Element  => {
                 size={'small'}
                 fullWidth
                 disabled={gradingMode}
+                placeholder={'記述問題の解答欄'}
             ></TextField>
         </div>
     )
