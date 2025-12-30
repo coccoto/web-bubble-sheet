@@ -49,7 +49,6 @@ export default ():React.JSX.Element  => {
                     {
                         menuList.result.map((value, index) => {
                             return <Button
-                                sx={{ color: 'white' }}
                                 key={value['id']}
                                 href={value['origin'] + value['path']}
                             >{value['app_name']}</Button>

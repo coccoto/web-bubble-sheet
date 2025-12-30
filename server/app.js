@@ -1,7 +1,12 @@
 require('module-alias/register')
 
 const Express = require('express')
+const path = require('path')
 const app = Express()
+
+// Serve static files from client/dist
+const distPath = path.resolve(__dirname, '..', 'client', 'dist')
+app.use(Express.static(distPath))
 
 // Enable JSON parsing
 app.use(Express.json())
