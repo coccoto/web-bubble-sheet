@@ -1,0 +1,33 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Application logs
+logs
+*.log
+
+# Environment variables and secrets
+# .env
+
+# Build outputs
+dist
+
+# Auto-generated code
+generated
+
+# Test coverage reports
+coverage
+
+# Dependencies
+node_modules
+
+# Next.js
+.next
+next-env.d.ts
+
+# Winston logger
+*-audit.json
+
+# Claude Code AI assistant
+.claude
+.serena

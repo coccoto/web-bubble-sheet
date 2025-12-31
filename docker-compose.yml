@@ -1,0 +1,12 @@
+services:
+  server:
+    container_name: web-bubble-sheet-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${PORT}:${PORT}"
+    volumes:
+      - ./server/logs:/app/server/logs
+    env_file:
+      - .env
