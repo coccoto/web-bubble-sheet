@@ -8,7 +8,10 @@ services:
       - "18020:18020"
     env_file:
       - ./server/.env
+    networks:
+      - web-bubble-sheet-network
 
 networks:
   web-bubble-sheet-network:
+    name: web-bubble-sheet-network
     external: true
