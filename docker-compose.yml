@@ -1,6 +1,6 @@
 services:
   server:
-    container_name: web-bubble-sheet-server
+    container_name: web-bubble-sheet
     build:
       context: .
       dockerfile: Dockerfile
@@ -8,3 +8,7 @@ services:
       - "18020:18020"
     env_file:
       - ./server/.env
+
+networks:
+  web-bubble-sheet-network:
+    external: true
