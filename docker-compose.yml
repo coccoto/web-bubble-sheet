@@ -1,12 +1,11 @@
 services:
   server:
+    image: ghcr.io/coccoto/web-bubble-sheet:latest
     container_name: web-bubble-sheet-server
     build:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "${PORT}:${PORT}"
+      - "18020:18020"
     volumes:
       - ./server/logs:/app/server/logs
-    env_file:
-      - .env

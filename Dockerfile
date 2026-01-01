@@ -19,6 +19,9 @@ RUN npm run release
 # Server Runtime
 FROM node:24-bookworm-slim
 
+# GitHub リポジトリ連携
+LABEL org.opencontainers.image.source=https://github.com/coccoto/web-bubble-sheet
+
 # OS をセットアップ
 RUN apt update && apt full-upgrade -y && apt autoremove -y && apt clean
 
