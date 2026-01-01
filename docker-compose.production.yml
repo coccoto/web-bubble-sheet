@@ -7,5 +7,3 @@ services:
       - "18020:18020"
     env_file:
       - ./server/.env
-    volumes:
-      - ./server/logs:/app/server/logs
