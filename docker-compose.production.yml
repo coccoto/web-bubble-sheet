@@ -1,7 +1,7 @@
 services:
-  server:
-    image: ghcr.io/coccoto/web-bubble-sheet:latest
+  app:
     container_name: web-bubble-sheet
+    image: ghcr.io/coccoto/web-bubble-sheet:latest
     restart: unless-stopped
     ports:
       - "18020:18020"
