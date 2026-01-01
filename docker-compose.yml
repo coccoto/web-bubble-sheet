@@ -1,6 +1,5 @@
 services:
   server:
-    image: ghcr.io/coccoto/web-bubble-sheet:latest
     container_name: web-bubble-sheet-server
     build:
       context: .
