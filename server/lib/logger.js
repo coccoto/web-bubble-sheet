@@ -1,7 +1,6 @@
 const { initLogger, getLogger } = require('@coccoto/node-logmanager')
-const config = require('@/config/config')
 
-initLogger(config.log)
+initLogger()
 const logger = getLogger()
 
 module.exports = { logger }
