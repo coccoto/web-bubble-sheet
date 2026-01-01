@@ -1,5 +1,5 @@
 # Client Build
-FROM node:24-bookworm AS client
+FROM node:24-bookworm-slim AS client
 
 # OS をセットアップ
 RUN apt update && apt full-upgrade -y && apt autoremove -y && apt clean
@@ -17,7 +17,7 @@ COPY client/ ./
 RUN npm run release
 
 # Server Runtime
-FROM node:24-bookworm
+FROM node:24-bookworm-slim
 
 # OS をセットアップ
 RUN apt update && apt full-upgrade -y && apt autoremove -y && apt clean
