@@ -26,6 +26,7 @@ export default (): React.JSX.Element => {
                                 key={index + context.answerFormStatus.keyCount}
                                 index={index}
                                 bubbleNum={context.answerFormStatus.bubbleNum}
+                                choiceType={context.answerFormStatus.choiceType}
                             ></AnswerLine>
                         })
                     }

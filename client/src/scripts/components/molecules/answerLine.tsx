@@ -5,11 +5,14 @@ import AnswerHeader from '@/scripts/components/molecules/answerHeader'
 import Bubbles from '@/scripts/components/molecules/bubbles'
 // material
 import TextField from '@mui/material/TextField'
+// types
+import { ChoiceType } from '@/types'
 // styles
 import styles from '@/styles/components/molecules/answerLine.module.sass'
 
 type Props = {
     bubbleNum: number,
+    choiceType: ChoiceType,
     index: number,
 }
 
@@ -22,6 +25,7 @@ export default (props: Props): React.JSX.Element  => {
             ></AnswerHeader>
             <Bubbles
                 bubbleNum={props.bubbleNum}
+                choiceType={props.choiceType}
             ></Bubbles>
             <TextField
                 size={'small'}

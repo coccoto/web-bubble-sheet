@@ -1,11 +1,14 @@
 // react
 import React from 'react'
+// types
+import { ChoiceType } from '@/types'
 
 type ContextType = {
     answerFormStatus: {
         keyCount: number,
         questionNum: number,
         bubbleNum: number,
+        choiceType: ChoiceType,
         passNum: number,
         failNum: number,
         reviewNum: number,
@@ -14,6 +17,7 @@ type ContextType = {
         keyCount: number,
         questionNum: number,
         bubbleNum: number,
+        choiceType: ChoiceType,
         passNum: number,
         failNum: number,
         reviewNum: number,
@@ -29,6 +33,7 @@ const Context = React.createContext<ContextType>({
         keyCount: 0,
         questionNum: 5,
         bubbleNum: 4,
+        choiceType: ChoiceType.ALPHABET,
         passNum: 0,
         failNum: 0,
         reviewNum: 0,

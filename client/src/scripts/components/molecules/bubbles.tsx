@@ -4,11 +4,14 @@ import React from 'react'
 import InputControl from '@/scripts/components/atoms/inputControl'
 // material
 import Checkbox from '@mui/material/Checkbox'
+// types
+import { ChoiceType } from '@/types'
 // styles
 import styles from '@/styles/components/molecules/bubbles.module.sass'
 
 type Props = {
     bubbleNum: number,
+    choiceType: ChoiceType,
 }
 
 export default (props: Props): React.JSX.Element  => {
@@ -20,7 +23,7 @@ export default (props: Props): React.JSX.Element  => {
                     return <InputControl
                         key={index}
                         index={index}
-                        label={'isAlphabet'}
+                        label={props.choiceType}
                         control={<Checkbox size={'medium'}></Checkbox>}
                     ></InputControl>
                 })
