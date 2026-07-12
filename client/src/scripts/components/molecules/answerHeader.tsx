@@ -29,6 +29,10 @@ export default (props: Props): React.JSX.Element  => {
 
     const [checkedRadio, setCheckedRadio] = React.useState('')
 
+    React.useEffect(() => {
+        if (! gradingMode) setCheckedRadio('')
+    }, [gradingMode])
+
     const selectLabel = (): string => {
         const index = props.index + 1
         return 'QUESTION ' + String(index)
